@@ -2,559 +2,939 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#f6f7fb">
 <title>مشاور کنکور من</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#f6f7fb;
+ color:#18181b;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif
 }
-
-body {
-    margin: 0;
-    background: #f5f6fa;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: #18181b;
+button,input,select,textarea{font:inherit}
+.app{
+ max-width:480px;
+ min-height:100vh;
+ margin:auto;
+ padding:20px 16px 100px
 }
-
-.container {
-    max-width: 480px;
-    margin: auto;
-    padding: 20px 16px 100px;
+.page{display:none}
+.page.active{display:block}
+.header{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin-bottom:20px
 }
-
-/* Header */
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+h1{font-size:24px;margin:0 0 5px}
+h2{font-size:19px;margin:0}
+.date{font-size:13px;color:#777}
+.avatar{
+ width:44px;height:44px;border-radius:15px;
+ background:#18181b;color:white;
+ display:grid;place-items:center;font-weight:700
 }
-
-.header h1 {
-    margin: 0;
-    font-size: 24px;
+.card{
+ background:white;
+ border-radius:22px;
+ padding:18px;
+ margin-bottom:15px;
+ box-shadow:0 7px 25px rgba(0,0,0,.05)
 }
-
-.date {
-    margin-top: 5px;
-    color: #777;
-    font-size: 13px;
+.label{font-size:12px;color:#777}
+.big{
+ font-size:30px;
+ font-weight:800;
+ margin:7px 0 13px
 }
-
-.avatar {
-    width: 45px;
-    height: 45px;
-    border-radius: 15px;
-    background: #18181b;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+.progress{
+ height:9px;background:#e9e9ee;border-radius:20px;
+ overflow:hidden
 }
-
-/* Main card */
-
-.card {
-    background: white;
-    border-radius: 24px;
-    padding: 20px;
-    margin-bottom: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+.progress div{
+ height:100%;background:#18181b;border-radius:20px;
+ transition:.3s
 }
-
-.small {
-    color: #777;
-    font-size: 13px;
+.stats{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:9px;
+ margin-top:14px
 }
-
-.study {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin: 8px 0 15px;
+.stat{
+ background:#f5f5f7;
+ padding:11px;
+ border-radius:14px
 }
-
-.time {
-    font-size: 30px;
-    font-weight: 800;
+.stat b{display:block;font-size:17px}
+.stat span{font-size:10px;color:#777}
+.section{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin:22px 3px 11px
 }
-
-.target {
-    color: #777;
-    font-size: 13px;
+.task{
+ display:flex;
+ align-items:center;
+ gap:11px;
+ padding:13px 0;
+ border-bottom:1px solid #eee
 }
-
-.progress {
-    height: 10px;
-    background: #e9e9ed;
-    border-radius: 20px;
-    overflow: hidden;
+.task:last-child{border-bottom:0}
+.icon{
+ width:42px;height:42px;border-radius:13px;
+ background:#f0f1f5;
+ display:grid;place-items:center;font-size:20px
 }
-
-.progress-bar {
-    width: 66%;
-    height: 100%;
-    background: #18181b;
-    border-radius: 20px;
+.task-info{flex:1}
+.task-info b{display:block;font-size:14px}
+.task-info span{font-size:11px;color:#888}
+.delete{
+ border:0;background:#f3f3f5;
+ border-radius:9px;padding:7px 9px;
+ color:#777
 }
-
-.stats {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
+.empty{
+ text-align:center;
+ padding:25px 5px;
+ color:#888;
+ font-size:13px
 }
-
-.stat {
-    flex: 1;
-    background: #f5f5f7;
-    padding: 12px;
-    border-radius: 15px;
+.primary{
+ width:100%;
+ border:0;
+ background:#18181b;
+ color:#fff;
+ border-radius:15px;
+ padding:14px;
+ font-weight:700;
+ cursor:pointer;
+ margin-top:10px
 }
-
-.stat strong {
-    display: block;
-    font-size: 17px;
+.secondary{
+ width:100%;
+ border:0;
+ background:#ededf0;
+ color:#18181b;
+ border-radius:15px;
+ padding:13px;
+ font-weight:600;
+ margin-top:8px
 }
-
-.stat span {
-    font-size: 11px;
-    color: #777;
+.form-card{margin-top:10px}
+input,select,textarea{
+ width:100%;
+ border:1px solid #ddd;
+ background:#fafafa;
+ border-radius:13px;
+ padding:12px;
+ margin:6px 0;
+ outline:none
 }
-
-/* Section */
-
-.section-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 22px 4px 12px;
+textarea{min-height:80px;resize:vertical}
+.row{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:8px
 }
-
-.section-title h2 {
-    margin: 0;
-    font-size: 18px;
+.badge{
+ display:inline-block;
+ background:#f0f1f5;
+ border-radius:9px;
+ padding:5px 8px;
+ font-size:10px;
+ color:#666;
+ margin-top:5px
 }
-
-.section-title span {
-    color: #888;
-    font-size: 12px;
+.report{
+ white-space:pre-wrap;
+ background:#f7f7f9;
+ padding:14px;
+ border-radius:15px;
+ font-size:12px;
+ line-height:1.9
 }
-
-/* Tasks */
-
-.task {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
+.bottom{
+ position:fixed;
+ bottom:0;
+ left:50%;
+ transform:translateX(-50%);
+ width:min(480px,100%);
+ padding:9px 6px calc(9px + env(safe-area-inset-bottom));
+ background:rgba(255,255,255,.95);
+ backdrop-filter:blur(15px);
+ border-top:1px solid #eee;
+ display:grid;
+ grid-template-columns:repeat(5,1fr);
+ z-index:20
 }
-
-.task:last-child {
-    border-bottom: none;
+.nav{
+ border:0;
+ background:none;
+ color:#888;
+ font-size:10px;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ gap:3px
 }
-
-.subject-icon {
-    width: 43px;
-    height: 43px;
-    background: #f0f1f5;
-    border-radius: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-}
-
-.task-info {
-    flex: 1;
-}
-
-.task-info strong {
-    display: block;
-    font-size: 14px;
-}
-
-.task-info span {
-    color: #888;
-    font-size: 12px;
-}
-
-.check {
-    width: 25px;
-    height: 25px;
-    border: 2px solid #d4d4d8;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.check.done {
-    background: #18181b;
-    border-color: #18181b;
-    color: white;
-}
-
-/* Button */
-
-.add-button {
-    width: 100%;
-    border: none;
-    background: #18181b;
-    color: white;
-    padding: 15px;
-    border-radius: 17px;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 16px;
-    cursor: pointer;
-}
-
-/* Bottom navigation */
-
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(480px, 100%);
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(15px);
-    border-top: 1px solid #eee;
-    padding: 10px 8px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.nav-item {
-    border: none;
-    background: none;
-    color: #777;
-    font-size: 11px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-}
-
-.nav-item strong {
-    font-size: 20px;
-}
-
-.nav-item.active {
-    color: #18181b;
-    font-weight: bold;
-}
-
-/* Mobile */
-
-@media (max-width: 400px) {
-
-    .header h1 {
-        font-size: 21px;
-    }
-
-    .time {
-        font-size: 27px;
-    }
-
+.nav b{font-size:19px}
+.nav.active{color:#18181b;font-weight:700}
+.toast{
+ position:fixed;
+ left:50%;
+ bottom:90px;
+ transform:translateX(-50%);
+ background:#18181b;
+ color:white;
+ padding:10px 16px;
+ border-radius:12px;
+ font-size:12px;
+ display:none;
+ z-index:50
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="app">
 
-    <!-- Header -->
+<!-- HOME -->
+<section id="home" class="page active">
 
-    <div class="header">
+<div class="header">
+<div>
+<h1>سلام 👋</h1>
+<div class="date" id="today"></div>
+</div>
+<div class="avatar">ER</div>
+</div>
 
-        <div>
-            <h1>سلام الینا 👋</h1>
-            <div class="date">
-                امروز پنجشنبه ۲۹ مرداد ۱۴۰۵
-            </div>
-        </div>
+<div class="card">
+<div class="label">مطالعه امروز</div>
+<div class="big" id="todayStudy">0 دقیقه</div>
 
-        <div class="avatar">
-            ER
-        </div>
+<div class="progress">
+<div id="studyProgress" style="width:0%"></div>
+</div>
 
-    </div>
+<div class="stats">
+<div class="stat">
+<b id="homeTests">0</b>
+<span>تست</span>
+</div>
+<div class="stat">
+<b id="homePlans">0</b>
+<span>برنامه امروز</span>
+</div>
+<div class="stat">
+<b id="homePercent">0%</b>
+<span>اجرای برنامه</span>
+</div>
+</div>
+</div>
 
+<div class="section">
+<h2>برنامه امروز</h2>
+<span class="label" id="todayPlanCount">0 فعالیت</span>
+</div>
 
-    <!-- Study -->
+<div class="card" id="homePlansList"></div>
 
-    <div class="card">
+</section>
 
-        <div class="small">
-            مطالعه امروز
-        </div>
 
-        <div class="study">
+<!-- PLAN -->
+<section id="plan" class="page">
 
-            <div class="time">
-                03:20
-            </div>
+<div class="header">
+<div>
+<h1>📅 برنامه من</h1>
+<div class="date">برنامه را خودت تعیین کن</div>
+</div>
+</div>
 
-            <div class="target">
-                از 05:00 ساعت
-            </div>
+<div class="card form-card">
 
-        </div>
+<h2>افزودن برنامه</h2>
 
-        <div class="progress">
-            <div class="progress-bar"></div>
-        </div>
+<input id="planDate" type="date">
 
+<select id="planSubject">
+<option value="زیست‌شناسی">🧬 زیست‌شناسی</option>
+<option value="شیمی">🧪 شیمی</option>
+<option value="فیزیک">⚡ فیزیک</option>
+<option value="ریاضی">📐 ریاضی</option>
+<option value="زمین‌شناسی">🌍 زمین‌شناسی</option>
+</select>
 
-        <div class="stats">
+<input id="planTopic" placeholder="مبحث / گفتار">
 
-            <div class="stat">
-                <strong>66%</strong>
-                <span>پیشرفت امروز</span>
-            </div>
+<div class="row">
+<input id="planMinutes" type="number" placeholder="زمان (دقیقه)">
+<input id="planTests" type="number" placeholder="تعداد تست">
+</div>
 
-            <div class="stat">
-                <strong>74</strong>
-                <span>تست</span>
-            </div>
+<button class="primary" onclick="addPlan()">＋ اضافه کردن برنامه</button>
 
-            <div class="stat">
-                <strong>🔥 6</strong>
-                <span>روز متوالی</span>
-            </div>
+</div>
 
-        </div>
+<div class="section">
+<h2>برنامه‌های من</h2>
+</div>
 
-    </div>
+<div id="plansList"></div>
 
+</section>
 
-    <!-- Today's plan -->
 
-    <div class="section-title">
+<!-- ADD ACTIVITY -->
+<section id="activity" class="page">
 
-        <h2>
-            برنامه امروز
-        </h2>
+<div class="header">
+<div>
+<h1>➕ ثبت فعالیت</h1>
+<div class="date">هر چیزی را که واقعاً انجام دادی ثبت کن</div>
+</div>
+</div>
 
-        <span>
-            ۴ فعالیت
-        </span>
+<div class="card">
 
-    </div>
+<select id="actSubject">
+<option value="زیست‌شناسی">🧬 زیست‌شناسی</option>
+<option value="شیمی">🧪 شیمی</option>
+<option value="فیزیک">⚡ فیزیک</option>
+<option value="ریاضی">📐 ریاضی</option>
+<option value="زمین‌شناسی">🌍 زمین‌شناسی</option>
+</select>
 
+<input id="actTopic" placeholder="مبحث">
 
-    <div class="card">
+<div class="row">
+<input id="actMinutes" type="number" placeholder="دقیقه مطالعه">
+<input id="actTests" type="number" placeholder="تعداد تست">
+</div>
 
-        <!-- Biology -->
+<div class="row">
+<input id="actCorrect" type="number" placeholder="درست">
+<input id="actWrong" type="number" placeholder="غلط">
+</div>
 
-        <div class="task">
+<textarea id="actNote" placeholder="توضیحات یا علت اشتباهات"></textarea>
 
-            <div class="subject-icon">
-                🧬
-            </div>
+<button class="primary" onclick="addActivity()">ثبت فعالیت</button>
 
-            <div class="task-info">
+</div>
 
-                <strong>
-                    زیست‌شناسی
-                </strong>
+<div class="section">
+<h2>فعالیت‌های امروز</h2>
+</div>
 
-                <span>
-                    گفتار ۳ · ۱۲۰ دقیقه
-                </span>
+<div id="todayActivities"></div>
 
-            </div>
+</section>
 
-            <div class="check done">
-                ✓
-            </div>
 
-        </div>
+<!-- STATS -->
+<section id="statsPage" class="page">
 
+<div class="header">
+<div>
+<h1>📊 آمار من</h1>
+<div class="date">بر اساس اطلاعاتی که خودت ثبت کرده‌ای</div>
+</div>
+</div>
 
-        <!-- Chemistry -->
+<div class="card">
 
-        <div class="task">
+<div class="stats">
 
-            <div class="subject-icon">
-                🧪
-            </div>
+<div class="stat">
+<b id="statMinutes">0</b>
+<span>دقیقه مطالعه</span>
+</div>
 
-            <div class="task-info">
+<div class="stat">
+<b id="statTests">0</b>
+<span>تست</span>
+</div>
 
-                <strong>
-                    شیمی
-                </strong>
+<div class="stat">
+<b id="statPercent">0%</b>
+<span>درصد تست</span>
+</div>
 
-                <span>
-                    استوکیومتری · ۹۰ دقیقه
-                </span>
+</div>
 
-            </div>
+</div>
 
-            <div class="check">
-            </div>
+<div class="section">
+<h2>آمار درس‌ها</h2>
+</div>
 
-        </div>
+<div id="subjectStats"></div>
 
+</section>
 
-        <!-- Physics -->
 
-        <div class="task">
+<!-- REPORT -->
+<section id="reportPage" class="page">
 
-            <div class="subject-icon">
-                ⚡
-            </div>
+<div class="header">
+<div>
+<h1>📋 گزارش</h1>
+<div class="date">گزارش را برای تحلیل به ChatGPT بده</div>
+</div>
+</div>
 
-            <div class="task-info">
+<div class="card">
 
-                <strong>
-                    فیزیک
-                </strong>
+<div class="report" id="reportText">
+هنوز اطلاعاتی ثبت نشده.
+</div>
 
-                <span>
-                    فصل ۱۱ · ۶۰ دقیقه
-                </span>
+<button class="primary" onclick="copyReport()">
+کپی گزارش برای ChatGPT
+</button>
 
-            </div>
+</div>
 
-            <div class="check">
-            </div>
-
-        </div>
-
-
-        <!-- Math -->
-
-        <div class="task">
-
-            <div class="subject-icon">
-                📐
-            </div>
-
-            <div class="task-info">
-
-                <strong>
-                    ریاضی
-                </strong>
-
-                <span>
-                    تست مبحثی · ۳۰ دقیقه
-                </span>
-
-            </div>
-
-            <div class="check">
-            </div>
-
-        </div>
-
-
-        <button class="add-button">
-            ＋ ثبت فعالیت
-        </button>
-
-    </div>
-
-
-    <!-- Daily status -->
-
-    <div class="section-title">
-
-        <h2>
-            وضعیت امروز
-        </h2>
-
-    </div>
-
-
-    <div class="card">
-
-        <div class="small">
-            هدف مطالعه
-        </div>
-
-        <p>
-            ۳ ساعت و ۲۰ دقیقه از ۵ ساعت تکمیل شده.
-        </p>
-
-        <div class="small">
-            یادآوری
-        </div>
-
-        <p>
-            بعد از تست‌ها، تحلیل را فراموش نکن.
-        </p>
-
-    </div>
+</section>
 
 </div>
 
 
-<!-- Bottom navigation -->
+<!-- NAVIGATION -->
 
-<div class="bottom-nav">
+<nav class="bottom">
 
-    <button class="nav-item active">
-        <strong>⌂</strong>
-        خانه
-    </button>
+<button class="nav active" onclick="showPage('home',this)">
+<b>⌂</b>
+خانه
+</button>
 
-    <button class="nav-item">
-        <strong>▦</strong>
-        درس‌ها
-    </button>
+<button class="nav" onclick="showPage('plan',this)">
+<b>▣</b>
+برنامه
+</button>
 
-    <button class="nav-item">
-        <strong>＋</strong>
-        ثبت
-    </button>
+<button class="nav" onclick="showPage('activity',this)">
+<b>＋</b>
+ثبت
+</button>
 
-    <button class="nav-item">
-        <strong>◔</strong>
-        آمار
-    </button>
+<button class="nav" onclick="showPage('statsPage',this)">
+<b>◔</b>
+آمار
+</button>
 
-    <button class="nav-item">
-        <strong>◉</strong>
-        مشاور
-    </button>
+<button class="nav" onclick="showPage('reportPage',this)">
+<b>▤</b>
+گزارش
+</button>
 
-</div>
+</nav>
+
+<div class="toast" id="toast"></div>
 
 
 <script>
 
-/* فعال کردن تیک فعالیت‌ها */
+const subjects=[
+"زیست‌شناسی",
+"شیمی",
+"فیزیک",
+"ریاضی",
+"زمین‌شناسی"
+];
 
-const checks = document.querySelectorAll(".check");
+let plans=JSON.parse(localStorage.getItem("plans")||"[]");
+let activities=JSON.parse(localStorage.getItem("activities")||"[]");
 
-checks.forEach(function(check) {
+function save(){
+ localStorage.setItem("plans",JSON.stringify(plans));
+ localStorage.setItem("activities",JSON.stringify(activities));
+}
 
-    check.addEventListener("click", function() {
+function today(){
+ let d=new Date();
+ return d.toISOString().split("T")[0];
+}
 
-        this.classList.toggle("done");
+function formatDate(d){
+ if(!d)return "";
+ return new Date(d+"T12:00:00").toLocaleDateString("fa-IR");
+}
 
-        if (this.classList.contains("done")) {
-
-            this.innerHTML = "✓";
-
-        } else {
-
-            this.innerHTML = "";
-
-        }
-
-    });
-
+document.getElementById("today").innerText=
+new Date().toLocaleDateString("fa-IR",{
+ weekday:"long",
+ year:"numeric",
+ month:"long",
+ day:"numeric"
 });
+
+document.getElementById("planDate").value=today();
+
+
+function showPage(id,btn){
+
+ document.querySelectorAll(".page").forEach(p=>{
+  p.classList.remove("active");
+ });
+
+ document.getElementById(id).classList.add("active");
+
+ document.querySelectorAll(".nav").forEach(n=>{
+  n.classList.remove("active");
+ });
+
+ if(btn)btn.classList.add("active");
+
+ window.scrollTo(0,0);
+
+ if(id==="home")renderHome();
+ if(id==="plan")renderPlans();
+ if(id==="activity")renderActivities();
+ if(id==="statsPage")renderStats();
+ if(id==="reportPage")renderReport();
+}
+
+
+function addPlan(){
+
+ const date=document.getElementById("planDate").value;
+ const subject=document.getElementById("planSubject").value;
+ const topic=document.getElementById("planTopic").value.trim();
+ const minutes=Number(document.getElementById("planMinutes").value)||0;
+ const tests=Number(document.getElementById("planTests").value)||0;
+
+ if(!date||!topic){
+  toast("تاریخ و مبحث را وارد کن");
+  return;
+ }
+
+ plans.push({
+  id:Date.now(),
+  date,
+  subject,
+  topic,
+  minutes,
+  tests,
+  done:false
+ });
+
+ save();
+
+ document.getElementById("planTopic").value="";
+ document.getElementById("planMinutes").value="";
+ document.getElementById("planTests").value="";
+
+ renderPlans();
+ renderHome();
+
+ toast("برنامه ذخیره شد ✓");
+}
+
+
+function deletePlan(id){
+
+ plans=plans.filter(p=>p.id!==id);
+ save();
+
+ renderPlans();
+ renderHome();
+
+ toast("برنامه حذف شد");
+}
+
+
+function togglePlan(id){
+
+ const p=plans.find(x=>x.id===id);
+
+ if(p)p.done=!p.done;
+
+ save();
+ renderPlans();
+ renderHome();
+}
+
+
+function renderPlans(){
+
+ const box=document.getElementById("plansList");
+
+ if(!plans.length){
+  box.innerHTML='<div class="card empty">هنوز برنامه‌ای وارد نکرده‌ای.</div>';
+  return;
+ }
+
+ const sorted=[...plans].sort((a,b)=>a.date.localeCompare(b.date));
+
+ box.innerHTML=sorted.map(p=>`
+
+ <div class="card">
+
+ <div class="task">
+
+ <div class="icon">${subjectIcon(p.subject)}</div>
+
+ <div class="task-info">
+
+ <b>${escapeHTML(p.subject)}</b>
+
+ <span>
+ ${formatDate(p.date)} · ${escapeHTML(p.topic)}
+ </span>
+
+ <div>
+ <span class="badge">${p.minutes} دقیقه</span>
+ <span class="badge">${p.tests} تست</span>
+ </div>
+
+ </div>
+
+ <button class="delete" onclick="togglePlan(${p.id})">
+ ${p.done?"✓":"○"}
+ </button>
+
+ <button class="delete" onclick="deletePlan(${p.id})">
+ حذف
+ </button>
+
+ </div>
+
+ </div>
+
+ `).join("");
+}
+
+
+function addActivity(){
+
+ const subject=document.getElementById("actSubject").value;
+ const topic=document.getElementById("actTopic").value.trim();
+ const minutes=Number(document.getElementById("actMinutes").value)||0;
+ const tests=Number(document.getElementById("actTests").value)||0;
+ const correct=Number(document.getElementById("actCorrect").value)||0;
+ const wrong=Number(document.getElementById("actWrong").value)||0;
+ const note=document.getElementById("actNote").value.trim();
+
+ if(minutes===0&&tests===0){
+  toast("حداقل مطالعه یا تست را وارد کن");
+  return;
+ }
+
+ activities.push({
+  id:Date.now(),
+  date:today(),
+  subject,
+  topic,
+  minutes,
+  tests,
+  correct,
+  wrong,
+  note
+ });
+
+ save();
+
+ [
+ "actTopic",
+ "actMinutes",
+ "actTests",
+ "actCorrect",
+ "actWrong",
+ "actNote"
+ ].forEach(id=>{
+  document.getElementById(id).value="";
+ });
+
+ renderActivities();
+ renderHome();
+ renderStats();
+
+ toast("فعالیت ثبت شد ✓");
+}
+
+
+function renderActivities(){
+
+ const box=document.getElementById("todayActivities");
+
+ const arr=activities.filter(a=>a.date===today());
+
+ if(!arr.length){
+  box.innerHTML='<div class="card empty">هنوز فعالیتی برای امروز ثبت نکرده‌ای.</div>';
+  return;
+ }
+
+ box.innerHTML=arr.slice().reverse().map(a=>`
+
+ <div class="card">
+
+ <div class="task">
+
+ <div class="icon">${subjectIcon(a.subject)}</div>
+
+ <div class="task-info">
+
+ <b>${escapeHTML(a.subject)}</b>
+
+ <span>${escapeHTML(a.topic||"بدون مبحث")}</span>
+
+ <div>
+ <span class="badge">${a.minutes} دقیقه</span>
+ <span class="badge">${a.tests} تست</span>
+ </div>
+
+ </div>
+
+ </div>
+
+ </div>
+
+ `).join("");
+}
+
+
+function renderHome(){
+
+ const td=today();
+
+ const todayActivities=activities.filter(a=>a.date===td);
+ const todayPlans=plans.filter(p=>p.date===td);
+
+ const minutes=todayActivities.reduce((s,a)=>s+a.minutes,0);
+ const tests=todayActivities.reduce((s,a)=>s+a.tests,0);
+
+ const plannedMinutes=todayPlans.reduce((s,p)=>s+p.minutes,0);
+ const donePlans=todayPlans.filter(p=>p.done).length;
+
+ document.getElementById("todayStudy").innerText=
+ minutes+" دقیقه";
+
+ document.getElementById("homeTests").innerText=tests;
+ document.getElementById("homePlans").innerText=todayPlans.length;
+
+ const percent=todayPlans.length?
+ Math.round(donePlans/todayPlans.length*100):0;
+
+ document.getElementById("homePercent").innerText=percent+"%";
+
+ const target=plannedMinutes||300;
+
+ const progress=Math.min(100,Math.round(minutes/target*100));
+
+ document.getElementById("studyProgress").style.width=
+ progress+"%";
+
+ document.getElementById("todayPlanCount").innerText=
+ todayPlans.length+" فعالیت";
+
+ const box=document.getElementById("homePlansList");
+
+ if(!todayPlans.length){
+  box.innerHTML=
+  '<div class="empty">برای امروز هنوز برنامه‌ای نداری.<br>از بخش «برنامه» اضافه کن.</div>';
+  return;
+ }
+
+ box.innerHTML=todayPlans.map(p=>`
+
+ <div class="task">
+
+ <div class="icon">${subjectIcon(p.subject)}</div>
+
+ <div class="task-info">
+
+ <b>${escapeHTML(p.subject)}</b>
+
+ <span>${escapeHTML(p.topic)} · ${p.minutes} دقیقه</span>
+
+ </div>
+
+ <button class="delete"
+ onclick="togglePlan(${p.id})">
+ ${p.done?"✓":"○"}
+ </button>
+
+ </div>
+
+ `).join("");
+}
+
+
+function renderStats(){
+
+ const totalMinutes=activities.reduce((s,a)=>s+a.minutes,0);
+ const totalTests=activities.reduce((s,a)=>s+a.tests,0);
+ const correct=activities.reduce((s,a)=>s+a.correct,0);
+ const wrong=activities.reduce((s,a)=>s+a.wrong,0);
+
+ const answered=correct+wrong;
+
+ const percent=answered?
+ Math.round(correct/answered*100):0;
+
+ document.getElementById("statMinutes").innerText=totalMinutes;
+ document.getElementById("statTests").innerText=totalTests;
+ document.getElementById("statPercent").innerText=percent+"%";
+
+ const box=document.getElementById("subjectStats");
+
+ box.innerHTML=subjects.map(s=>{
+
+  const arr=activities.filter(a=>a.subject===s);
+
+  const min=arr.reduce((x,a)=>x+a.minutes,0);
+  const tests=arr.reduce((x,a)=>x+a.tests,0);
+  const c=arr.reduce((x,a)=>x+a.correct,0);
+  const w=arr.reduce((x,a)=>x+a.wrong,0);
+
+  const per=c+w?Math.round(c/(c+w)*100):0;
+
+  return `
+
+  <div class="card">
+
+  <div class="task">
+
+  <div class="icon">${subjectIcon(s)}</div>
+
+  <div class="task-info">
+
+  <b>${s}</b>
+
+  <span>
+  ${min} دقیقه مطالعه · ${tests} تست
+  </span>
+
+  </div>
+
+  <b>${per}%</b>
+
+  </div>
+
+  </div>
+
+  `;
+
+ }).join("");
+}
+
+
+function renderReport(){
+
+ const totalMinutes=activities.reduce((s,a)=>s+a.minutes,0);
+ const totalTests=activities.reduce((s,a)=>s+a.tests,0);
+
+ const correct=activities.reduce((s,a)=>s+a.correct,0);
+ const wrong=activities.reduce((s,a)=>s+a.wrong,0);
+
+ const answered=correct+wrong;
+ const percent=answered?
+ Math.round(correct/answered*100):0;
+
+ const donePlans=plans.filter(p=>p.done).length;
+
+ let text=
+`گزارش عملکرد کنکور
+
+مطالعه کل: ${totalMinutes} دقیقه
+تعداد تست: ${totalTests}
+درصد تست‌های پاسخ‌داده‌شده: ${percent}%
+
+اجرای برنامه:
+${donePlans} برنامه انجام‌شده از ${plans.length} برنامه
+
+آمار درس‌ها:
+`;
+
+ subjects.forEach(s=>{
+
+  const arr=activities.filter(a=>a.subject===s);
+
+  const min=arr.reduce((x,a)=>x+a.minutes,0);
+  const tests=arr.reduce((x,a)=>x+a.tests,0);
+  const c=arr.reduce((x,a)=>x+a.correct,0);
+  const w=arr.reduce((x,a)=>x+a.wrong,0);
+
+  const per=c+w?Math.round(c/(c+w)*100):0;
+
+  text+=
+`\n${s}: ${min} دقیقه، ${tests} تست، درصد ${per}%`;
+
+ });
+
+ text+=`
+
+از این داده‌ها عملکرد من را مثل یک مشاور سخت‌گیر کنکور تحلیل کن و بگو:
+1. نقاط قوت من چیست؟
+2. مهم‌ترین ضعف من چیست؟
+3. چه چیزی را باید هفته بعد تغییر بدهم؟
+4. آیا حجم مطالعه و تست من کافی بوده؟
+5. برای هفته بعد چه اولویت‌هایی داشته باشم؟`;
+
+ document.getElementById("reportText").innerText=text;
+}
+
+
+function copyReport(){
+
+ const text=document.getElementById("reportText").innerText;
+
+ navigator.clipboard.writeText(text)
+ .then(()=>toast("گزارش کپی شد ✓"))
+ .catch(()=>toast("کپی انجام نشد؛ متن را دستی انتخاب کن"));
+}
+
+
+function subjectIcon(s){
+
+ if(s==="زیست‌شناسی")return "🧬";
+ if(s==="شیمی")return "🧪";
+ if(s==="فیزیک")return "⚡";
+ if(s==="ریاضی")return "📐";
+ return "🌍";
+}
+
+
+function escapeHTML(text){
+
+ return String(text)
+ .replaceAll("&","&amp;")
+ .replaceAll("<","&lt;")
+ .replaceAll(">","&gt;")
+ .replaceAll('"',"&quot;")
+ .replaceAll("'","&#039;");
+}
+
+
+function toast(message){
+
+ const t=document.getElementById("toast");
+
+ t.innerText=message;
+ t.style.display="block";
+
+ setTimeout(()=>{
+  t.style.display="none";
+ },1800);
+}
+
+
+renderHome();
+renderPlans();
+renderActivities();
+renderStats();
+renderReport();
 
 </script>
 
