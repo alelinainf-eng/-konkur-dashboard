@@ -11,16 +11,16 @@
 
 body{
  margin:0;
- background:linear-gradient(180deg,#fff8fc 0%,#f4f9ff 100%);
- color:#34343b;
+ background:linear-gradient(180deg,#fff8fc,#f3f9ff);
+ color:#3d3b43;
  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
 }
 
 .app{
- max-width:500px;
+ max-width:520px;
  margin:auto;
  min-height:100vh;
- padding:18px 15px 105px;
+ padding:18px 15px 110px;
 }
 
 .page{display:none}
@@ -30,13 +30,12 @@ body{
  display:flex;
  justify-content:space-between;
  align-items:center;
- margin-bottom:20px;
+ margin-bottom:18px;
 }
 
 h1{
- margin:0 0 5px;
+ margin:0;
  font-size:24px;
- color:#45434a;
 }
 
 h2{
@@ -44,60 +43,50 @@ h2{
  font-size:18px;
 }
 
-.date{
- color:#92909a;
+.label,.date{
+ color:#9995a0;
  font-size:12px;
 }
 
 .avatar{
- width:46px;
- height:46px;
- border-radius:17px;
+ width:47px;
+ height:47px;
  display:grid;
  place-items:center;
- background:linear-gradient(135deg,#f8c9df,#c9e8ff);
- font-weight:800;
- color:white;
- box-shadow:0 5px 15px #e7dbe4;
+ border-radius:17px;
+ background:linear-gradient(135deg,#f7c6dd,#c5e7ff);
+ box-shadow:0 7px 20px #e6dce3;
 }
 
 .card{
- background:rgba(255,255,255,.92);
- border:1px solid rgba(255,255,255,.8);
+ background:rgba(255,255,255,.94);
  border-radius:24px;
- padding:18px;
- margin-bottom:15px;
- box-shadow:0 8px 28px rgba(150,150,180,.10);
+ padding:17px;
+ margin-bottom:14px;
+ box-shadow:0 7px 25px rgba(140,140,170,.10);
 }
 
 .hero{
- background:linear-gradient(135deg,#ffe5f0,#e4f4ff);
-}
-
-.label{
- color:#96939d;
- font-size:12px;
+ background:linear-gradient(135deg,#ffe5f0,#e2f3ff);
 }
 
 .big{
- font-size:31px;
+ font-size:30px;
  font-weight:800;
- margin:7px 0 13px;
+ margin:8px 0 13px;
 }
 
 .progress{
  height:10px;
- background:#eeeef3;
- border-radius:30px;
+ background:#eeeeF3;
+ border-radius:20px;
  overflow:hidden;
 }
 
 .progress div{
  height:100%;
- width:0%;
- background:linear-gradient(90deg,#f3a9c9,#9dd8f6);
- border-radius:30px;
- transition:.4s;
+ background:linear-gradient(90deg,#efa9c8,#9bd8f5);
+ border-radius:20px;
 }
 
 .stats{
@@ -110,48 +99,46 @@ h2{
 .stat{
  background:#faf8fb;
  border-radius:16px;
- padding:11px 7px;
+ padding:10px 5px;
  text-align:center;
 }
 
 .stat b{
  display:block;
- font-size:17px;
+ font-size:16px;
 }
 
 .stat span{
  font-size:10px;
- color:#96939d;
+ color:#999;
 }
 
 .section{
  display:flex;
  justify-content:space-between;
  align-items:center;
- margin:22px 3px 11px;
+ margin:21px 3px 10px;
 }
 
 .task{
  display:flex;
  align-items:center;
  gap:10px;
- padding:13px 0;
+ padding:12px 0;
  border-bottom:1px solid #f0edf1;
 }
 
-.task:last-child{
- border-bottom:0;
-}
+.task:last-child{border-bottom:0}
 
 .icon{
  width:43px;
  height:43px;
- flex:none;
  border-radius:15px;
- background:#f5f5f8;
+ background:#f6f4f8;
  display:grid;
  place-items:center;
  font-size:21px;
+ flex:none;
 }
 
 .task-info{
@@ -165,25 +152,21 @@ h2{
 }
 
 .task-info span{
- color:#92909a;
+ color:#94919b;
  font-size:11px;
 }
 
 .badge{
  display:inline-block;
+ background:#f5f1f5;
  padding:4px 7px;
- margin:4px 2px 0;
  border-radius:8px;
- background:#f4f0f5;
- color:#77737d;
+ margin:4px 2px 0;
  font-size:9px;
 }
 
-.done{
- color:#59a878;
-}
-
 button{
+ font-family:inherit;
  cursor:pointer;
 }
 
@@ -192,48 +175,48 @@ button{
  border:0;
  padding:14px;
  border-radius:16px;
- background:linear-gradient(135deg,#eea9c9,#9dd8f6);
  color:white;
  font-weight:800;
- margin-top:8px;
- box-shadow:0 7px 18px rgba(210,160,190,.25);
+ background:linear-gradient(135deg,#eea8c9,#9dd8f6);
+ box-shadow:0 7px 18px rgba(210,160,190,.22);
 }
 
 .secondary{
  width:100%;
  border:0;
- padding:13px;
+ padding:12px;
  border-radius:15px;
- background:#f2f2f6;
+ background:#f2f1f5;
  color:#555;
  margin-top:8px;
 }
 
-.delete{
+.danger{
  border:0;
- background:#f7f4f7;
+ background:#fff0f3;
+ color:#d96d8f;
+ padding:8px 10px;
  border-radius:10px;
- padding:7px;
- color:#888;
 }
 
 input,select,textarea{
  width:100%;
- border:1px solid #e6e2e7;
- background:#fff;
- border-radius:14px;
  padding:12px;
  margin:5px 0;
+ border:1px solid #e6e2e7;
+ border-radius:14px;
+ background:white;
  color:#444;
  outline:none;
+ font-family:inherit;
 }
 
 input:focus,select:focus,textarea:focus{
- border-color:#d8b6ca;
+ border-color:#d9b4c9;
 }
 
 textarea{
- min-height:80px;
+ min-height:75px;
  resize:vertical;
 }
 
@@ -243,44 +226,23 @@ textarea{
  gap:8px;
 }
 
-.subject-grid{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:9px;
-}
-
-.subject{
- border:0;
- padding:13px 8px;
- border-radius:16px;
- background:#faf8fb;
- text-align:right;
-}
-
-.subject small{
- display:block;
- color:#999;
- margin-top:3px;
-}
-
 .empty{
  text-align:center;
- padding:25px 8px;
  color:#999;
  font-size:13px;
  line-height:2;
+ padding:20px 5px;
 }
 
 .sleep-card{
- background:linear-gradient(135deg,#e6f5ff,#fce6f1);
+ background:linear-gradient(135deg,#e5f4ff,#fde5f1);
 }
 
 .sleep-time{
  display:flex;
  justify-content:space-between;
- align-items:center;
  font-size:15px;
- margin:12px 0;
+ margin-bottom:10px;
 }
 
 .sleep-duration{
@@ -291,56 +253,55 @@ textarea{
 
 .sleep-status{
  text-align:center;
- font-size:12px;
  color:#777;
+ font-size:12px;
  margin-top:5px;
 }
 
 .report{
- white-space:pre-wrap;
  background:#faf8fb;
+ border-radius:17px;
  padding:15px;
- border-radius:16px;
+ white-space:pre-wrap;
  line-height:1.9;
  font-size:12px;
 }
 
 .bottom{
  position:fixed;
- bottom:0;
  left:50%;
+ bottom:0;
  transform:translateX(-50%);
- width:min(500px,100%);
+ width:min(520px,100%);
  padding:9px 5px calc(9px + env(safe-area-inset-bottom));
  background:rgba(255,255,255,.96);
  backdrop-filter:blur(15px);
  border-top:1px solid #eee;
  display:grid;
  grid-template-columns:repeat(5,1fr);
- z-index:20;
+ z-index:30;
 }
 
 .nav{
  border:0;
  background:none;
  color:#999;
- font-size:9px;
  display:flex;
  flex-direction:column;
  align-items:center;
  gap:3px;
+ font-size:9px;
 }
 
-.nav b{
- font-size:19px;
-}
+.nav b{font-size:19px}
 
 .nav.active{
- color:#df8fb5;
+ color:#df8db4;
  font-weight:800;
 }
 
 .toast{
+ display:none;
  position:fixed;
  left:50%;
  bottom:90px;
@@ -350,9 +311,21 @@ textarea{
  padding:10px 17px;
  border-radius:13px;
  font-size:12px;
- display:none;
- z-index:50;
+ z-index:100;
 }
+
+.compare{
+ background:#f8f5f9;
+ border-radius:15px;
+ padding:12px;
+ margin-top:8px;
+ font-size:11px;
+ line-height:2;
+}
+
+.good{color:#4f9d71}
+.warn{color:#d99455}
+.bad{color:#d76e8b}
 </style>
 </head>
 
@@ -377,9 +350,9 @@ textarea{
 
 <div class="big">
 <span id="todayMinutes">0</span>
-<span> / </span>
-<span id="goalMinutes">300</span>
-<span> دقیقه</span>
+ /
+<span>300</span>
+ دقیقه
 </div>
 
 <div class="progress">
@@ -387,7 +360,6 @@ textarea{
 </div>
 
 <div class="stats">
-
 <div class="stat">
 <b id="homeTests">0</b>
 <span>📝 تست</span>
@@ -395,25 +367,23 @@ textarea{
 
 <div class="stat">
 <b id="homeExecution">0%</b>
-<span>🎯 اجرای برنامه</span>
+<span>🎯 اجرا</span>
 </div>
 
 <div class="stat">
 <b id="homeSleep">—</b>
 <span>😴 خواب</span>
 </div>
-
-</div>
 </div>
 
+</div>
 
 <div class="section">
 <h2>🌷 برنامه امروز</h2>
-<span class="label" id="homePlanCount">0 فعالیت</span>
+<span class="label" id="homePlanCount"></span>
 </div>
 
 <div class="card" id="homePlans"></div>
-
 
 <div class="section">
 <h2>😴 خواب دیشب</h2>
@@ -430,7 +400,7 @@ textarea{
 <div class="header">
 <div>
 <h1>📅 برنامه من</h1>
-<div class="date">برنامه‌ای که خودت تعیین می‌کنی</div>
+<div class="date">برنامه‌ات را خودت بساز</div>
 </div>
 </div>
 
@@ -455,18 +425,14 @@ textarea{
 <input id="pTopic" placeholder="مبحث / گفتار">
 
 <div class="row">
-<input id="pMinutes" type="number" placeholder="زمان برنامه (دقیقه)">
-<input id="pTests" type="number" placeholder="تعداد تست برنامه">
+<input id="pMinutes" type="number" placeholder="زمان برنامه">
+<input id="pTests" type="number" placeholder="تعداد تست">
 </div>
 
 <button class="primary" onclick="addPlan()">
-🌷 اضافه کردن به برنامه
+🎀 اضافه کردن برنامه
 </button>
 
-</div>
-
-<div class="section">
-<h2>🗓️ برنامه‌ها</h2>
 </div>
 
 <div id="plansList"></div>
@@ -479,46 +445,38 @@ textarea{
 
 <div class="header">
 <div>
-<h1>📝 ثبت عملکرد</h1>
-<div class="date">فقط چیزی که واقعاً انجام دادی</div>
+<h1>➕ ثبت عملکرد</h1>
+<div class="date">چیزی که واقعاً انجام دادی</div>
 </div>
 </div>
 
 <div class="card">
 
-<h2>📚 فعالیت امروز</h2>
+<h2>📚 انتخاب برنامه</h2>
 
-<select id="aPlan"></select>
+<select id="aPlan" onchange="fillFromPlan()"></select>
 
-<select id="aSubject">
-<option>🧬 زیست‌شناسی</option>
-<option>🧪 شیمی</option>
-<option>⚡ فیزیک</option>
-<option>📐 ریاضی</option>
-<option>🌍 زمین‌شناسی</option>
-<option>📖 فارسی</option>
-<option>🕌 دین و زندگی</option>
-<option>📝 عربی</option>
-<option>🇬🇧 زبان انگلیسی</option>
-</select>
+<div class="label">وقتی برنامه را انتخاب کنی، درس و مبحث خودکار پر می‌شوند.</div>
 
-<input id="aTopic" placeholder="مبحث">
+<input id="aSubject" readonly>
 
-<input id="aMinutes" type="number" placeholder="واقعاً چند دقیقه خواندی؟">
+<input id="aTopic" readonly>
+
+<input id="aMinutes" type="number" placeholder="⏱️ واقعاً چند دقیقه خواندی؟">
+
+<input id="aTests" type="number" placeholder="📝 تعداد تست واقعی">
 
 <div class="row">
-<input id="aTests" type="number" placeholder="کل تست انجام‌شده">
-<input id="aCorrect" type="number" placeholder="درست ✅">
+<input id="aCorrect" type="number" placeholder="✅ درست">
+<input id="aDoubt" type="number" placeholder="🤔 شک‌دار">
 </div>
 
 <div class="row">
-<input id="aDoubt" type="number" placeholder="شک‌دار 🤔">
-<input id="aWrong" type="number" placeholder="غلط ❌">
+<input id="aWrong" type="number" placeholder="❌ غلط">
+<input id="aBlank" type="number" placeholder="⚪ نزده">
 </div>
 
-<input id="aBlank" type="number" placeholder="نزده ⚪">
-
-<textarea id="aNote" placeholder="نکته / علت غلط‌ها / وضعیت مطالعه"></textarea>
+<textarea id="aNote" placeholder="یادداشت یا علت اشتباه‌ها"></textarea>
 
 <button class="primary" onclick="addActivity()">
 💗 ثبت عملکرد واقعی
@@ -541,13 +499,15 @@ textarea{
 <div class="header">
 <div>
 <h1>😴 خواب من</h1>
-<div class="date">خواب خوب = مغز آماده‌تر برای یادگیری ☁️</div>
+<div class="date">خواب هر روز جدا ذخیره می‌شود ☁️</div>
 </div>
 </div>
 
 <div class="card">
 
-<h2>🌙 خواب دیشب را ثبت کن</h2>
+<h2>🌙 ثبت خواب</h2>
+
+<input id="sleepDate" type="date">
 
 <div class="row">
 <div>
@@ -567,21 +527,7 @@ textarea{
 
 </div>
 
-<div class="card sleep-card">
-
-<div class="sleep-time">
-<span id="savedStart">—</span>
-<span>→</span>
-<span id="savedEnd">—</span>
-</div>
-
-<div class="sleep-duration" id="sleepDuration">
-هنوز ثبت نشده
-</div>
-
-<div class="sleep-status" id="sleepStatus"></div>
-
-</div>
+<div id="sleepHistory"></div>
 
 </section>
 
@@ -592,14 +538,13 @@ textarea{
 <div class="header">
 <div>
 <h1>📊 آمار من</h1>
-<div class="date">واقعیت عملکردت اینجاست</div>
+<div class="date">پیشرفت واقعی تو</div>
 </div>
 </div>
 
 <div class="card">
 
 <div class="stats">
-
 <div class="stat">
 <b id="totalMinutes">0</b>
 <span>⏱️ دقیقه</span>
@@ -612,15 +557,10 @@ textarea{
 
 <div class="stat">
 <b id="accuracy">0%</b>
-<span>🎯 عملکرد</span>
+<span>🎯 دقت</span>
+</div>
 </div>
 
-</div>
-
-</div>
-
-<div class="section">
-<h2>📚 عملکرد درس‌ها</h2>
 </div>
 
 <div id="subjectStats"></div>
@@ -633,8 +573,8 @@ textarea{
 
 <div class="header">
 <div>
-<h1>📋 گزارش من</h1>
-<div class="date">آماده برای ارسال به ChatGPT 💌</div>
+<h1>💌 گزارش امروز</h1>
+<div class="date">آماده ارسال برای مشاور</div>
 </div>
 </div>
 
@@ -643,7 +583,7 @@ textarea{
 <div class="report" id="reportText"></div>
 
 <button class="primary" onclick="copyReport()">
-💌 کپی گزارش برای ChatGPT
+💌 کپی گزارش
 </button>
 
 </div>
@@ -653,33 +593,26 @@ textarea{
 </div>
 
 
-<!-- NAV -->
-
 <nav class="bottom">
 
 <button class="nav active" onclick="showPage('home',this)">
-<b>🏠</b>
-خانه
+<b>🏠</b>خانه
 </button>
 
 <button class="nav" onclick="showPage('program',this)">
-<b>📅</b>
-برنامه
+<b>📅</b>برنامه
 </button>
 
 <button class="nav" onclick="showPage('activity',this)">
-<b>➕</b>
-ثبت
+<b>➕</b>ثبت
 </button>
 
 <button class="nav" onclick="showPage('stats',this)">
-<b>📊</b>
-آمار
+<b>📊</b>آمار
 </button>
 
 <button class="nav" onclick="showPage('report',this)">
-<b>💌</b>
-گزارش
+<b>💌</b>گزارش
 </button>
 
 </nav>
@@ -689,23 +622,10 @@ textarea{
 
 <script>
 
+/* اطلاعات قبلی حفظ می‌شوند */
 let plans=JSON.parse(localStorage.getItem("cutePlans")||"[]");
 let activities=JSON.parse(localStorage.getItem("cuteActivities")||"[]");
 let sleeps=JSON.parse(localStorage.getItem("cuteSleeps")||"{}");
-
-let dailyGoal=300;
-
-const subjects=[
-"🧬 زیست‌شناسی",
-"🧪 شیمی",
-"⚡ فیزیک",
-"📐 ریاضی",
-"🌍 زمین‌شناسی",
-"📖 فارسی",
-"🕌 دین و زندگی",
-"📝 عربی",
-"🇬🇧 زبان انگلیسی"
-];
 
 function today(){
  return new Date().toISOString().split("T")[0];
@@ -730,15 +650,20 @@ new Date().toLocaleDateString("fa-IR",{
 });
 
 document.getElementById("pDate").value=today();
+document.getElementById("sleepDate").value=today();
 
 
-function showPage(id,button){
+function showPage(id,btn){
 
- document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+ document.querySelectorAll(".page")
+ .forEach(x=>x.classList.remove("active"));
+
  document.getElementById(id).classList.add("active");
 
- document.querySelectorAll(".nav").forEach(x=>x.classList.remove("active"));
- if(button)button.classList.add("active");
+ document.querySelectorAll(".nav")
+ .forEach(x=>x.classList.remove("active"));
+
+ if(btn)btn.classList.add("active");
 
  if(id==="home")renderHome();
  if(id==="program")renderPlans();
@@ -754,13 +679,15 @@ function showPage(id,button){
 }
 
 
+/* PROGRAM */
+
 function addPlan(){
 
- let date=document.getElementById("pDate").value;
- let subject=document.getElementById("pSubject").value;
- let topic=document.getElementById("pTopic").value.trim();
- let minutes=Number(document.getElementById("pMinutes").value)||0;
- let tests=Number(document.getElementById("pTests").value)||0;
+ let date=pDate.value;
+ let subject=pSubject.value;
+ let topic=pTopic.value.trim();
+ let minutes=Number(pMinutes.value)||0;
+ let tests=Number(pTests.value)||0;
 
  if(!date||!topic){
   toast("تاریخ و مبحث را وارد کن 🌷");
@@ -779,9 +706,9 @@ function addPlan(){
 
  save();
 
- document.getElementById("pTopic").value="";
- document.getElementById("pMinutes").value="";
- document.getElementById("pTests").value="";
+ pTopic.value="";
+ pMinutes.value="";
+ pTests.value="";
 
  renderPlans();
  renderHome();
@@ -792,17 +719,22 @@ function addPlan(){
 
 function deletePlan(id){
 
+ if(!confirm("این برنامه حذف شود؟"))return;
+
  plans=plans.filter(p=>p.id!==id);
+
  save();
  renderPlans();
  renderHome();
- toast("برنامه حذف شد");
+
+ toast("برنامه حذف شد 🗑️");
 }
 
 
 function togglePlan(id){
 
  let p=plans.find(x=>x.id===id);
+
  if(p)p.done=!p.done;
 
  save();
@@ -816,7 +748,8 @@ function renderPlans(){
  let box=document.getElementById("plansList");
 
  if(!plans.length){
-  box.innerHTML='<div class="card empty">هنوز برنامه‌ای نداری 🌷<br>برنامه‌ات را خودت بساز.</div>';
+  box.innerHTML=
+  '<div class="card empty">هنوز برنامه‌ای نداری 🌷</div>';
   return;
  }
 
@@ -833,7 +766,6 @@ function renderPlans(){
  <div class="task-info">
 
  <b>${esc(p.subject)}</b>
-
  <span>${dateFa(p.date)} · ${esc(p.topic)}</span>
 
  <div>
@@ -843,11 +775,13 @@ function renderPlans(){
 
  </div>
 
- <button class="delete" onclick="togglePlan(${p.id})">
+ <button class="danger"
+ onclick="togglePlan(${p.id})">
  ${p.done?"✅":"⭕"}
  </button>
 
- <button class="delete" onclick="deletePlan(${p.id})">
+ <button class="danger"
+ onclick="deletePlan(${p.id})">
  🗑️
  </button>
 
@@ -859,6 +793,8 @@ function renderPlans(){
 }
 
 
+/* ACTIVITY */
+
 function renderPlanSelect(){
 
  let select=document.getElementById("aPlan");
@@ -866,34 +802,59 @@ function renderPlanSelect(){
  let todayPlans=plans.filter(p=>p.date===today());
 
  select.innerHTML=
- '<option value="">بدون اتصال به برنامه</option>'+
+ '<option value="">انتخاب برنامه امروز 🌷</option>'+
  todayPlans.map(p=>
  `<option value="${p.id}">
- ${p.subject} - ${p.topic}
+ ${p.subject} — ${p.topic}
  </option>`
  ).join("");
 }
 
 
+function fillFromPlan(){
+
+ let id=Number(document.getElementById("aPlan").value);
+
+ let p=plans.find(x=>x.id===id);
+
+ if(!p){
+  aSubject.value="";
+  aTopic.value="";
+  return;
+ }
+
+ aSubject.value=p.subject;
+ aTopic.value=p.topic;
+}
+
+
 function addActivity(){
 
- let planId=Number(document.getElementById("aPlan").value)||null;
+ let planId=Number(aPlan.value)||null;
+ let plan=plans.find(p=>p.id===planId);
 
- let subject=document.getElementById("aSubject").value;
- let topic=document.getElementById("aTopic").value.trim();
+ let subject=plan?plan.subject:aSubject.value;
+ let topic=plan?plan.topic:aTopic.value;
 
- let minutes=Number(document.getElementById("aMinutes").value)||0;
- let tests=Number(document.getElementById("aTests").value)||0;
+ let minutes=Number(aMinutes.value)||0;
+ let tests=Number(aTests.value)||0;
 
- let correct=Number(document.getElementById("aCorrect").value)||0;
- let doubt=Number(document.getElementById("aDoubt").value)||0;
- let wrong=Number(document.getElementById("aWrong").value)||0;
- let blank=Number(document.getElementById("aBlank").value)||0;
+ let correct=Number(aCorrect.value)||0;
+ let doubt=Number(aDoubt.value)||0;
+ let wrong=Number(aWrong.value)||0;
+ let blank=Number(aBlank.value)||0;
 
- let note=document.getElementById("aNote").value.trim();
+ let note=aNote.value.trim();
+
+ let answers=correct+doubt+wrong+blank;
+
+ if(tests>0 && answers!==tests){
+  toast("تعداد درست + شک‌دار + غلط + نزده باید برابر تعداد تست باشد ⚠️");
+  return;
+ }
 
  if(minutes===0&&tests===0){
-  toast("زمان مطالعه یا تست را وارد کن 🌸");
+  toast("زمان یا تست را وارد کن 🌸");
   return;
  }
 
@@ -912,28 +873,36 @@ function addActivity(){
   note
  });
 
- if(planId){
-  let p=plans.find(x=>x.id===planId);
-  if(p)p.done=true;
- }
+ if(plan)plan.done=true;
 
  save();
 
- [
- "aTopic",
- "aMinutes",
- "aTests",
- "aCorrect",
- "aDoubt",
- "aWrong",
- "aBlank",
- "aNote"
- ].forEach(id=>document.getElementById(id).value="");
+ aMinutes.value="";
+ aTests.value="";
+ aCorrect.value="";
+ aDoubt.value="";
+ aWrong.value="";
+ aBlank.value="";
+ aNote.value="";
 
  renderActivities();
  renderHome();
 
- toast("عملکرد واقعی ثبت شد 💗");
+ toast("عملکرد ثبت شد 💗");
+}
+
+
+function deleteActivity(id){
+
+ if(!confirm("این فعالیت حذف شود؟"))return;
+
+ activities=activities.filter(a=>a.id!==id);
+
+ save();
+ renderActivities();
+ renderHome();
+
+ toast("فعالیت حذف شد 🗑️");
 }
 
 
@@ -944,7 +913,8 @@ function renderActivities(){
  let arr=activities.filter(a=>a.date===today());
 
  if(!arr.length){
-  box.innerHTML='<div class="card empty">هنوز چیزی ثبت نکردی ☁️</div>';
+  box.innerHTML=
+  '<div class="card empty">هنوز فعالیتی ثبت نکردی ☁️</div>';
   return;
  }
 
@@ -959,7 +929,6 @@ function renderActivities(){
  <div class="task-info">
 
  <b>${esc(a.subject)}</b>
-
  <span>${esc(a.topic||"بدون مبحث")}</span>
 
  <div>
@@ -976,6 +945,11 @@ function renderActivities(){
 
  </div>
 
+ <button class="danger"
+ onclick="deleteActivity(${a.id})">
+ 🗑️
+ </button>
+
  </div>
 
  </div>
@@ -983,6 +957,8 @@ function renderActivities(){
  `).join("");
 }
 
+
+/* HOME */
 
 function renderHome(){
 
@@ -997,23 +973,23 @@ function renderHome(){
  let execution=todayPlans.length?
  Math.round(done/todayPlans.length*100):0;
 
- document.getElementById("todayMinutes").innerText=minutes;
- document.getElementById("goalMinutes").innerText=dailyGoal;
+ todayMinutes.innerText=minutes;
+ homeTests.innerText=tests;
+ homeExecution.innerText=execution+"%";
 
- document.getElementById("homeTests").innerText=tests;
- document.getElementById("homeExecution").innerText=execution+"%";
+ goalProgress.style.width=
+ Math.min(100,minutes/300*100)+"%";
 
- document.getElementById("goalProgress").style.width=
- Math.min(100,minutes/dailyGoal*100)+"%";
-
- document.getElementById("homePlanCount").innerText=
+ homePlanCount.innerText=
  todayPlans.length+" فعالیت";
 
  let box=document.getElementById("homePlans");
 
  if(!todayPlans.length){
+
   box.innerHTML=
-  '<div class="empty">برای امروز برنامه‌ای نداری 🌷<br>از بخش «برنامه» اضافه کن.</div>';
+  '<div class="empty">برای امروز برنامه‌ای نداری 🌷<br>از بخش برنامه اضافه کن.</div>';
+
  }else{
 
   box.innerHTML=todayPlans.map(p=>`
@@ -1023,14 +999,12 @@ function renderHome(){
   <div class="icon">${icon(p.subject)}</div>
 
   <div class="task-info">
-
   <b>${esc(p.subject)}</b>
-
   <span>${esc(p.topic)} · ${p.minutes} دقیقه</span>
-
   </div>
 
-  <button class="delete" onclick="togglePlan(${p.id})">
+  <button class="danger"
+  onclick="togglePlan(${p.id})">
   ${p.done?"✅":"⭕"}
   </button>
 
@@ -1043,14 +1017,181 @@ function renderHome(){
 }
 
 
+/* SLEEP */
+
+function saveSleep(){
+
+ let date=sleepDate.value;
+ let start=sleepStart.value;
+ let end=sleepEnd.value;
+
+ if(!date||!start||!end){
+  toast("تاریخ و ساعت‌ها را وارد کن 🌙");
+  return;
+ }
+
+ sleeps[date]={start,end};
+
+ save();
+
+ sleepStart.value="";
+ sleepEnd.value="";
+
+ renderSleep();
+ renderHome();
+
+ toast("خواب ذخیره شد 🌙");
+}
+
+
+function sleepMinutes(start,end){
+
+ let a=start.split(":").map(Number);
+ let b=end.split(":").map(Number);
+
+ let s=a[0]*60+a[1];
+ let e=b[0]*60+b[1];
+
+ if(e<=s)e+=1440;
+
+ return e-s;
+}
+
+
+function sleepText(min){
+
+ let h=Math.floor(min/60);
+ let m=min%60;
+
+ return h+" ساعت و "+m+" دقیقه";
+}
+
+
+function sleepStatus(min){
+
+ if(min>=450)return "🌸 خواب خوب و کافی";
+ if(min>=360)return "☁️ خواب متوسط";
+ return "🥱 خواب کم";
+}
+
+
+function renderSleep(){
+
+ let box=document.getElementById("sleepHistory");
+
+ let dates=Object.keys(sleeps).sort().reverse();
+
+ if(!dates.length){
+  box.innerHTML=
+  '<div class="card empty">هنوز خواب ثبت نکردی 🌙</div>';
+  return;
+ }
+
+ box.innerHTML=dates.map(d=>{
+
+  let s=sleeps[d];
+  let min=sleepMinutes(s.start,s.end);
+
+  return`
+
+  <div class="card sleep-card">
+
+  <div class="label">${dateFa(d)}</div>
+
+  <div class="sleep-time">
+  <span>🌙 ${s.start}</span>
+  <span>☀️ ${s.end}</span>
+  </div>
+
+  <div class="sleep-duration">
+  ${sleepText(min)}
+  </div>
+
+  <div class="sleep-status">
+  ${sleepStatus(min)}
+  </div>
+
+  <button class="danger"
+  style="width:100%;margin-top:10px"
+  onclick="deleteSleep('${d}')">
+  🗑️ حذف این رکورد
+  </button>
+
+  </div>
+
+  `;
+
+ }).join("");
+}
+
+
+function deleteSleep(date){
+
+ if(!confirm("رکورد خواب حذف شود؟"))return;
+
+ delete sleeps[date];
+
+ save();
+ renderSleep();
+ renderHome();
+
+ toast("خواب حذف شد 🗑️");
+}
+
+
+function renderSleepHome(){
+
+ let s=sleeps[today()];
+ let box=document.getElementById("homeSleepCard");
+
+ if(!s){
+  box.innerHTML=
+  '<div class="empty">خواب دیشبت ثبت نشده 🌙</div>';
+  homeSleep.innerText="—";
+  return;
+ }
+
+ let min=sleepMinutes(s.start,s.end);
+
+ homeSleep.innerText=Math.floor(min/60)+"س";
+
+ box.innerHTML=`
+
+ <div class="sleep-time">
+ <span>🌙 ${s.start}</span>
+ <span>☀️ ${s.end}</span>
+ </div>
+
+ <div class="sleep-duration">
+ ${sleepText(min)}
+ </div>
+
+ <div class="sleep-status">
+ ${sleepStatus(min)}
+ </div>
+
+ `;
+}
+
+
+/* STATS */
+
 function renderStats(){
 
- let totalMinutes=activities.reduce((s,a)=>s+a.minutes,0);
- let totalTests=activities.reduce((s,a)=>s+a.tests,0);
+ let totalMinutes=
+ activities.reduce((s,a)=>s+a.minutes,0);
 
- let correct=activities.reduce((s,a)=>s+a.correct,0);
- let doubt=activities.reduce((s,a)=>s+a.doubt,0);
- let wrong=activities.reduce((s,a)=>s+a.wrong,0);
+ let totalTests=
+ activities.reduce((s,a)=>s+a.tests,0);
+
+ let correct=
+ activities.reduce((s,a)=>s+a.correct,0);
+
+ let doubt=
+ activities.reduce((s,a)=>s+a.doubt,0);
+
+ let wrong=
+ activities.reduce((s,a)=>s+a.wrong,0);
 
  let answered=correct+doubt+wrong;
 
@@ -1061,15 +1202,24 @@ function renderStats(){
  document.getElementById("totalTests").innerText=totalTests;
  document.getElementById("accuracy").innerText=accuracy+"%";
 
- let box=document.getElementById("subjectStats");
+ let list=[...new Set([
+  "🧬 زیست‌شناسی",
+  "🧪 شیمی",
+  "⚡ فیزیک",
+  "📐 ریاضی",
+  "🌍 زمین‌شناسی",
+  "📖 فارسی",
+  "🕌 دین و زندگی",
+  "📝 عربی",
+  "🇬🇧 زبان انگلیسی"
+ ])];
 
- box.innerHTML=subjects.map(s=>{
+ subjectStats.innerHTML=list.map(s=>{
 
   let arr=activities.filter(a=>a.subject===s);
 
   let min=arr.reduce((x,a)=>x+a.minutes,0);
   let tests=arr.reduce((x,a)=>x+a.tests,0);
-
   let c=arr.reduce((x,a)=>x+a.correct,0);
   let d=arr.reduce((x,a)=>x+a.doubt,0);
   let w=arr.reduce((x,a)=>x+a.wrong,0);
@@ -1077,7 +1227,7 @@ function renderStats(){
   let ans=c+d+w;
   let per=ans?Math.round(c/ans*100):0;
 
-  return `
+  return`
 
   <div class="card">
 
@@ -1086,9 +1236,7 @@ function renderStats(){
   <div class="icon">${icon(s)}</div>
 
   <div class="task-info">
-
   <b>${esc(s)}</b>
-
   <span>${min} دقیقه · ${tests} تست</span>
 
   <div>
@@ -1111,128 +1259,27 @@ function renderStats(){
 }
 
 
-function saveSleep(){
-
- let start=document.getElementById("sleepStart").value;
- let end=document.getElementById("sleepEnd").value;
-
- if(!start||!end){
-  toast("ساعت خواب و بیداری را وارد کن 🌙");
-  return;
- }
-
- sleeps[today()]={start,end};
-
- save();
- renderSleep();
- renderHome();
-
- toast("خواب ثبت شد 🌙");
-}
-
-
-function sleepHours(start,end){
-
- let a=start.split(":").map(Number);
- let b=end.split(":").map(Number);
-
- let startMin=a[0]*60+a[1];
- let endMin=b[0]*60+b[1];
-
- if(endMin<=startMin)endMin+=1440;
-
- return endMin-startMin;
-}
-
-
-function sleepText(minutes){
-
- let h=Math.floor(minutes/60);
- let m=minutes%60;
-
- return h+" ساعت و "+m+" دقیقه";
-}
-
-
-function sleepStatus(minutes){
-
- if(minutes>=450)return "🌸 خواب خوب و کافی";
- if(minutes>=360)return "☁️ خواب متوسط";
- return "🥱 خواب کم؛ مراقب ریکاوری باش";
-}
-
-
-function renderSleep(){
-
- let s=sleeps[today()];
-
- if(!s){
-  document.getElementById("savedStart").innerText="—";
-  document.getElementById("savedEnd").innerText="—";
-  document.getElementById("sleepDuration").innerText="هنوز ثبت نشده";
-  document.getElementById("sleepStatus").innerText="";
-  return;
- }
-
- let min=sleepHours(s.start,s.end);
-
- document.getElementById("savedStart").innerText=s.start;
- document.getElementById("savedEnd").innerText=s.end;
- document.getElementById("sleepDuration").innerText=sleepText(min);
- document.getElementById("sleepStatus").innerText=sleepStatus(min);
-}
-
-
-function renderSleepHome(){
-
- let s=sleeps[today()];
- let box=document.getElementById("homeSleepCard");
-
- if(!s){
-  box.innerHTML=
-  '<div class="empty">هنوز خواب دیشبت رو ثبت نکردی 🌙</div>';
-  document.getElementById("homeSleep").innerText="—";
-  return;
- }
-
- let min=sleepHours(s.start,s.end);
- let h=Math.floor(min/60);
-
- document.getElementById("homeSleep").innerText=h+"س";
-
- box.innerHTML=`
-
- <div class="sleep-time">
- <span>🌙 ${s.start}</span>
- <span>☀️ ${s.end}</span>
- </div>
-
- <div class="sleep-duration">
- ${sleepText(min)}
- </div>
-
- <div class="sleep-status">
- ${sleepStatus(min)}
- </div>
-
- `;
-}
-
+/* REPORT */
 
 function renderReport(){
 
- let totalMin=activities.reduce((s,a)=>s+a.minutes,0);
- let totalTests=activities.reduce((s,a)=>s+a.tests,0);
+ let todayPlans=plans.filter(p=>p.date===today());
+ let todayActs=activities.filter(a=>a.date===today());
 
- let correct=activities.reduce((s,a)=>s+a.correct,0);
- let doubt=activities.reduce((s,a)=>s+a.doubt,0);
- let wrong=activities.reduce((s,a)=>s+a.wrong,0);
- let blank=activities.reduce((s,a)=>s+a.blank,0);
+ let totalMin=todayActs.reduce((s,a)=>s+a.minutes,0);
+ let totalTests=todayActs.reduce((s,a)=>s+a.tests,0);
 
- let answered=correct+doubt+wrong;
- let accuracy=answered?Math.round(correct/answered*100):0;
+ let correct=todayActs.reduce((s,a)=>s+a.correct,0);
+ let doubt=todayActs.reduce((s,a)=>s+a.doubt,0);
+ let wrong=todayActs.reduce((s,a)=>s+a.wrong,0);
+ let blank=todayActs.reduce((s,a)=>s+a.blank,0);
 
- let donePlans=plans.filter(p=>p.done).length;
+ let answer=correct+doubt+wrong;
+
+ let accuracy=answer?
+ Math.round(correct/answer*100):0;
+
+ let done=todayPlans.filter(p=>p.done).length;
 
  let text=
 `🎀 گزارش عملکرد کنکور من
@@ -1249,44 +1296,33 @@ ${totalTests}
 ❌ غلط: ${wrong}
 ⚪ نزده: ${blank}
 
-🎯 دقت تست:
+🎯 دقت:
 ${accuracy}%
 
-📅 اجرای برنامه:
-${donePlans} برنامه از ${plans.length} برنامه انجام شده
-`;
-
- let sleep=sleeps[today()];
-
- if(sleep){
-  let mins=sleepHours(sleep.start,sleep.end);
-  text+=`
-
-😴 خواب:
-${sleep.start} تا ${sleep.end}
-مدت: ${sleepText(mins)}
-`;
- }
-
- text+=`
+📅 برنامه انجام‌شده:
+${done} از ${todayPlans.length}
 
 ━━━━━━━━━━━━━━
 
-📚 مقایسه برنامه و عملکرد:
-
+📚 مقایسه برنامه با عملکرد واقعی:
 `;
 
- plans.filter(p=>p.date===today()).forEach(p=>{
+ todayPlans.forEach(p=>{
 
-  let related=activities.filter(a=>a.planId===p.id);
+  let acts=todayActs.filter(a=>a.planId===p.id);
 
-  let realMin=related.reduce((s,a)=>s+a.minutes,0);
-  let realTests=related.reduce((s,a)=>s+a.tests,0);
+  let realMin=acts.reduce((s,a)=>s+a.minutes,0);
+  let realTests=acts.reduce((s,a)=>s+a.tests,0);
 
-  let timePercent=p.minutes?
+  let realCorrect=acts.reduce((s,a)=>s+a.correct,0);
+  let realDoubt=acts.reduce((s,a)=>s+a.doubt,0);
+  let realWrong=acts.reduce((s,a)=>s+a.wrong,0);
+  let realBlank=acts.reduce((s,a)=>s+a.blank,0);
+
+  let timePer=p.minutes?
   Math.round(realMin/p.minutes*100):0;
 
-  let testPercent=p.tests?
+  let testPer=p.tests?
   Math.round(realTests/p.tests*100):0;
 
   text+=`
@@ -1295,21 +1331,41 @@ ${p.subject} — ${p.topic}
 
 ⏰ برنامه: ${p.minutes} دقیقه
 ⏱️ واقعی: ${realMin} دقیقه
-🎯 اجرای زمانی: ${timePercent}%
+🎯 اجرای زمانی: ${timePer}%
 
 📝 تست برنامه: ${p.tests}
 ✏️ تست واقعی: ${realTests}
-📊 اجرای تست: ${testPercent}%
-`;
+📊 اجرای تست: ${testPer}%
 
+✅ درست: ${realCorrect}
+🤔 شک‌دار: ${realDoubt}
+❌ غلط: ${realWrong}
+⚪ نزده: ${realBlank}
+`;
  });
+
+ let s=sleeps[today()];
+
+ if(s){
+
+  let mins=sleepMinutes(s.start,s.end);
+
+  text+=`
+
+━━━━━━━━━━━━━━
+
+😴 خواب:
+${s.start} → ${s.end}
+${sleepText(mins)}
+${sleepStatus(mins)}
+`;
+ }
 
  text+=`
 
 ━━━━━━━━━━━━━━
 
-💌 این گزارش را برای تحلیل به مشاور کنکور بده.
-`;
+💌 گزارش آماده تحلیل توسط مشاور کنکور است.`;
 
  document.getElementById("reportText").innerText=text;
 }
@@ -1317,13 +1373,15 @@ ${p.subject} — ${p.topic}
 
 function copyReport(){
 
- let text=document.getElementById("reportText").innerText;
-
- navigator.clipboard.writeText(text)
+ navigator.clipboard.writeText(
+  document.getElementById("reportText").innerText
+ )
  .then(()=>toast("گزارش کپی شد 💌"))
- .catch(()=>toast("کپی نشد؛ متن را دستی انتخاب کن"));
+ .catch(()=>toast("کپی نشد"));
 }
 
+
+/* HELPERS */
 
 function icon(s){
 
@@ -1364,6 +1422,8 @@ function toast(msg){
  },1800);
 }
 
+
+/* START */
 
 renderHome();
 renderPlans();
