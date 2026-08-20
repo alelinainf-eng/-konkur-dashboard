@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مشاور کنکور من</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f6fa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #18181b;
+}
+
+.container {
+    max-width: 480px;
+    margin: auto;
+    padding: 20px 16px 100px;
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.date {
+    margin-top: 5px;
+    color: #777;
+    font-size: 13px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 15px;
+    background: #18181b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Main card */
+
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.small {
+    color: #777;
+    font-size: 13px;
+}
+
+.study {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 8px 0 15px;
+}
+
+.time {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.target {
+    color: #777;
+    font-size: 13px;
+}
+
+.progress {
+    height: 10px;
+    background: #e9e9ed;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 66%;
+    height: 100%;
+    background: #18181b;
+    border-radius: 20px;
+}
+
+.stats {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.stat {
+    flex: 1;
+    background: #f5f5f7;
+    padding: 12px;
+    border-radius: 15px;
+}
+
+.stat strong {
+    display: block;
+    font-size: 17px;
+}
+
+.stat span {
+    font-size: 11px;
+    color: #777;
+}
+
+/* Section */
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 22px 4px 12px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.section-title span {
+    color: #888;
+    font-size: 12px;
+}
+
+/* Tasks */
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.task:last-child {
+    border-bottom: none;
+}
+
+.subject-icon {
+    width: 43px;
+    height: 43px;
+    background: #f0f1f5;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-info strong {
+    display: block;
+    font-size: 14px;
+}
+
+.task-info span {
+    color: #888;
+    font-size: 12px;
+}
+
+.check {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #d4d4d8;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.check.done {
+    background: #18181b;
+    border-color: #18181b;
+    color: white;
+}
+
+/* Button */
+
+.add-button {
+    width: 100%;
+    border: none;
+    background: #18181b;
+    color: white;
+    padding: 15px;
+    border-radius: 17px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+/* Bottom navigation */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(480px, 100%);
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid #eee;
+    padding: 10px 8px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item {
+    border: none;
+    background: none;
+    color: #777;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-item strong {
+    font-size: 20px;
+}
+
+.nav-item.active {
+    color: #18181b;
+    font-weight: bold;
+}
+
+/* Mobile */
+
+@media (max-width: 400px) {
+
+    .header h1 {
+        font-size: 21px;
+    }
+
+    .time {
+        font-size: 27px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <div>
+            <h1>سلام الینا 👋</h1>
+            <div class="date">
+                امروز پنجشنبه ۲۹ مرداد ۱۴۰۵
+            </div>
+        </div>
+
+        <div class="avatar">
+            ER
+        </div>
+
+    </div>
+
+
+    <!-- Study -->
+
+    <div class="card">
+
+        <div class="small">
+            مطالعه امروز
+        </div>
+
+        <div class="study">
+
+            <div class="time">
+                03:20
+            </div>
+
+            <div class="target">
+                از 05:00 ساعت
+            </div>
+
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>66%</strong>
+                <span>پیشرفت امروز</span>
+            </div>
+
+            <div class="stat">
+                <strong>74</strong>
+                <span>تست</span>
+            </div>
+
+            <div class="stat">
+                <strong>🔥 6</strong>
+                <span>روز متوالی</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Today's plan -->
+
+    <div class="section-title">
+
+        <h2>
+            برنامه امروز
+        </h2>
+
+        <span>
+            ۴ فعالیت
+        </span>
+
+    </div>
+
+
+    <div class="card">
+
+        <!-- Biology -->
+
+        <div class="task">
+
+            <div class="subject-icon">
+                🧬
+            </div>
+
+            <div class="task-info">
+
+                <strong>
+                    زیست‌شناسی
+                </strong>
+
+                <span>
+                    گفتار ۳ · ۱۲۰ دقیقه
+                </span>
+
+            </div>
+
+            <div class="check done">
+                ✓
+            </div>
+
+        </div>
+
+
+        <!-- Chemistry -->
+
+        <div class="task">
+
+            <div class="subject-icon">
+                🧪
+            </div>
+
+            <div class="task-info">
+
+                <strong>
+                    شیمی
+                </strong>
+
+                <span>
+                    استوکیومتری · ۹۰ دقیقه
+                </span>
+
+            </div>
+
+            <div class="check">
+            </div>
+
+        </div>
+
+
+        <!-- Physics -->
+
+        <div class="task">
+
+            <div class="subject-icon">
+                ⚡
+            </div>
+
+            <div class="task-info">
+
+                <strong>
+                    فیزیک
+                </strong>
+
+                <span>
+                    فصل ۱۱ · ۶۰ دقیقه
+                </span>
+
+            </div>
+
+            <div class="check">
+            </div>
+
+        </div>
+
+
+        <!-- Math -->
+
+        <div class="task">
+
+            <div class="subject-icon">
+                📐
+            </div>
+
+            <div class="task-info">
+
+                <strong>
+                    ریاضی
+                </strong>
+
+                <span>
+                    تست مبحثی · ۳۰ دقیقه
+                </span>
+
+            </div>
+
+            <div class="check">
+            </div>
+
+        </div>
+
+
+        <button class="add-button">
+            ＋ ثبت فعالیت
+        </button>
+
+    </div>
+
+
+    <!-- Daily status -->
+
+    <div class="section-title">
+
+        <h2>
+            وضعیت امروز
+        </h2>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="small">
+            هدف مطالعه
+        </div>
+
+        <p>
+            ۳ ساعت و ۲۰ دقیقه از ۵ ساعت تکمیل شده.
+        </p>
+
+        <div class="small">
+            یادآوری
+        </div>
+
+        <p>
+            بعد از تست‌ها، تحلیل را فراموش نکن.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- Bottom navigation -->
+
+<div class="bottom-nav">
+
+    <button class="nav-item active">
+        <strong>⌂</strong>
+        خانه
+    </button>
+
+    <button class="nav-item">
+        <strong>▦</strong>
+        درس‌ها
+    </button>
+
+    <button class="nav-item">
+        <strong>＋</strong>
+        ثبت
+    </button>
+
+    <button class="nav-item">
+        <strong>◔</strong>
+        آمار
+    </button>
+
+    <button class="nav-item">
+        <strong>◉</strong>
+        مشاور
+    </button>
+
+</div>
+
+
+<script>
+
+/* فعال کردن تیک فعالیت‌ها */
+
+const checks = document.querySelectorAll(".check");
+
+checks.forEach(function(check) {
+
+    check.addEventListener("click", function() {
+
+        this.classList.toggle("done");
+
+        if (this.classList.contains("done")) {
+
+            this.innerHTML = "✓";
+
+        } else {
+
+            this.innerHTML = "";
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
