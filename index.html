@@ -2,200 +2,356 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<meta name="theme-color" content="#f6f7fb">
-<title>مشاور کنکور من</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#f8dce9">
+<title>دفتر کنکور من 🎀</title>
 
 <style>
 *{box-sizing:border-box}
+
 body{
  margin:0;
- background:#f6f7fb;
- color:#18181b;
- font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif
+ background:linear-gradient(180deg,#fff8fc 0%,#f4f9ff 100%);
+ color:#34343b;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
 }
-button,input,select,textarea{font:inherit}
+
 .app{
- max-width:480px;
- min-height:100vh;
+ max-width:500px;
  margin:auto;
- padding:20px 16px 100px
+ min-height:100vh;
+ padding:18px 15px 105px;
 }
+
 .page{display:none}
 .page.active{display:block}
+
 .header{
  display:flex;
  justify-content:space-between;
  align-items:center;
- margin-bottom:20px
+ margin-bottom:20px;
 }
-h1{font-size:24px;margin:0 0 5px}
-h2{font-size:19px;margin:0}
-.date{font-size:13px;color:#777}
+
+h1{
+ margin:0 0 5px;
+ font-size:24px;
+ color:#45434a;
+}
+
+h2{
+ margin:0;
+ font-size:18px;
+}
+
+.date{
+ color:#92909a;
+ font-size:12px;
+}
+
 .avatar{
- width:44px;height:44px;border-radius:15px;
- background:#18181b;color:white;
- display:grid;place-items:center;font-weight:700
+ width:46px;
+ height:46px;
+ border-radius:17px;
+ display:grid;
+ place-items:center;
+ background:linear-gradient(135deg,#f8c9df,#c9e8ff);
+ font-weight:800;
+ color:white;
+ box-shadow:0 5px 15px #e7dbe4;
 }
+
 .card{
- background:white;
- border-radius:22px;
+ background:rgba(255,255,255,.92);
+ border:1px solid rgba(255,255,255,.8);
+ border-radius:24px;
  padding:18px;
  margin-bottom:15px;
- box-shadow:0 7px 25px rgba(0,0,0,.05)
+ box-shadow:0 8px 28px rgba(150,150,180,.10);
 }
-.label{font-size:12px;color:#777}
+
+.hero{
+ background:linear-gradient(135deg,#ffe5f0,#e4f4ff);
+}
+
+.label{
+ color:#96939d;
+ font-size:12px;
+}
+
 .big{
- font-size:30px;
+ font-size:31px;
  font-weight:800;
- margin:7px 0 13px
+ margin:7px 0 13px;
 }
+
 .progress{
- height:9px;background:#e9e9ee;border-radius:20px;
- overflow:hidden
+ height:10px;
+ background:#eeeef3;
+ border-radius:30px;
+ overflow:hidden;
 }
+
 .progress div{
- height:100%;background:#18181b;border-radius:20px;
- transition:.3s
+ height:100%;
+ width:0%;
+ background:linear-gradient(90deg,#f3a9c9,#9dd8f6);
+ border-radius:30px;
+ transition:.4s;
 }
+
 .stats{
  display:grid;
  grid-template-columns:repeat(3,1fr);
- gap:9px;
- margin-top:14px
+ gap:8px;
+ margin-top:14px;
 }
+
 .stat{
- background:#f5f5f7;
- padding:11px;
- border-radius:14px
+ background:#faf8fb;
+ border-radius:16px;
+ padding:11px 7px;
+ text-align:center;
 }
-.stat b{display:block;font-size:17px}
-.stat span{font-size:10px;color:#777}
+
+.stat b{
+ display:block;
+ font-size:17px;
+}
+
+.stat span{
+ font-size:10px;
+ color:#96939d;
+}
+
 .section{
  display:flex;
  justify-content:space-between;
  align-items:center;
- margin:22px 3px 11px
+ margin:22px 3px 11px;
 }
+
 .task{
  display:flex;
  align-items:center;
- gap:11px;
+ gap:10px;
  padding:13px 0;
- border-bottom:1px solid #eee
+ border-bottom:1px solid #f0edf1;
 }
-.task:last-child{border-bottom:0}
+
+.task:last-child{
+ border-bottom:0;
+}
+
 .icon{
- width:42px;height:42px;border-radius:13px;
- background:#f0f1f5;
- display:grid;place-items:center;font-size:20px
+ width:43px;
+ height:43px;
+ flex:none;
+ border-radius:15px;
+ background:#f5f5f8;
+ display:grid;
+ place-items:center;
+ font-size:21px;
 }
-.task-info{flex:1}
-.task-info b{display:block;font-size:14px}
-.task-info span{font-size:11px;color:#888}
-.delete{
- border:0;background:#f3f3f5;
- border-radius:9px;padding:7px 9px;
- color:#777
+
+.task-info{
+ flex:1;
+ min-width:0;
 }
-.empty{
- text-align:center;
- padding:25px 5px;
- color:#888;
- font-size:13px
+
+.task-info b{
+ display:block;
+ font-size:13px;
 }
+
+.task-info span{
+ color:#92909a;
+ font-size:11px;
+}
+
+.badge{
+ display:inline-block;
+ padding:4px 7px;
+ margin:4px 2px 0;
+ border-radius:8px;
+ background:#f4f0f5;
+ color:#77737d;
+ font-size:9px;
+}
+
+.done{
+ color:#59a878;
+}
+
+button{
+ cursor:pointer;
+}
+
 .primary{
  width:100%;
  border:0;
- background:#18181b;
- color:#fff;
- border-radius:15px;
  padding:14px;
- font-weight:700;
- cursor:pointer;
- margin-top:10px
+ border-radius:16px;
+ background:linear-gradient(135deg,#eea9c9,#9dd8f6);
+ color:white;
+ font-weight:800;
+ margin-top:8px;
+ box-shadow:0 7px 18px rgba(210,160,190,.25);
 }
+
 .secondary{
  width:100%;
  border:0;
- background:#ededf0;
- color:#18181b;
- border-radius:15px;
  padding:13px;
- font-weight:600;
- margin-top:8px
+ border-radius:15px;
+ background:#f2f2f6;
+ color:#555;
+ margin-top:8px;
 }
-.form-card{margin-top:10px}
+
+.delete{
+ border:0;
+ background:#f7f4f7;
+ border-radius:10px;
+ padding:7px;
+ color:#888;
+}
+
 input,select,textarea{
  width:100%;
- border:1px solid #ddd;
- background:#fafafa;
- border-radius:13px;
+ border:1px solid #e6e2e7;
+ background:#fff;
+ border-radius:14px;
  padding:12px;
- margin:6px 0;
- outline:none
+ margin:5px 0;
+ color:#444;
+ outline:none;
 }
-textarea{min-height:80px;resize:vertical}
+
+input:focus,select:focus,textarea:focus{
+ border-color:#d8b6ca;
+}
+
+textarea{
+ min-height:80px;
+ resize:vertical;
+}
+
 .row{
  display:grid;
  grid-template-columns:1fr 1fr;
- gap:8px
+ gap:8px;
 }
-.badge{
- display:inline-block;
- background:#f0f1f5;
- border-radius:9px;
- padding:5px 8px;
- font-size:10px;
- color:#666;
- margin-top:5px
+
+.subject-grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:9px;
 }
+
+.subject{
+ border:0;
+ padding:13px 8px;
+ border-radius:16px;
+ background:#faf8fb;
+ text-align:right;
+}
+
+.subject small{
+ display:block;
+ color:#999;
+ margin-top:3px;
+}
+
+.empty{
+ text-align:center;
+ padding:25px 8px;
+ color:#999;
+ font-size:13px;
+ line-height:2;
+}
+
+.sleep-card{
+ background:linear-gradient(135deg,#e6f5ff,#fce6f1);
+}
+
+.sleep-time{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ font-size:15px;
+ margin:12px 0;
+}
+
+.sleep-duration{
+ text-align:center;
+ font-size:25px;
+ font-weight:800;
+}
+
+.sleep-status{
+ text-align:center;
+ font-size:12px;
+ color:#777;
+ margin-top:5px;
+}
+
 .report{
  white-space:pre-wrap;
- background:#f7f7f9;
- padding:14px;
- border-radius:15px;
+ background:#faf8fb;
+ padding:15px;
+ border-radius:16px;
+ line-height:1.9;
  font-size:12px;
- line-height:1.9
 }
+
 .bottom{
  position:fixed;
  bottom:0;
  left:50%;
  transform:translateX(-50%);
- width:min(480px,100%);
- padding:9px 6px calc(9px + env(safe-area-inset-bottom));
- background:rgba(255,255,255,.95);
+ width:min(500px,100%);
+ padding:9px 5px calc(9px + env(safe-area-inset-bottom));
+ background:rgba(255,255,255,.96);
  backdrop-filter:blur(15px);
  border-top:1px solid #eee;
  display:grid;
  grid-template-columns:repeat(5,1fr);
- z-index:20
+ z-index:20;
 }
+
 .nav{
  border:0;
  background:none;
- color:#888;
- font-size:10px;
+ color:#999;
+ font-size:9px;
  display:flex;
  flex-direction:column;
  align-items:center;
- gap:3px
+ gap:3px;
 }
-.nav b{font-size:19px}
-.nav.active{color:#18181b;font-weight:700}
+
+.nav b{
+ font-size:19px;
+}
+
+.nav.active{
+ color:#df8fb5;
+ font-weight:800;
+}
+
 .toast{
  position:fixed;
  left:50%;
  bottom:90px;
  transform:translateX(-50%);
- background:#18181b;
+ background:#45434a;
  color:white;
- padding:10px 16px;
- border-radius:12px;
+ padding:10px 17px;
+ border-radius:13px;
  font-size:12px;
  display:none;
- z-index:50
+ z-index:50;
 }
 </style>
 </head>
@@ -209,83 +365,108 @@ textarea{min-height:80px;resize:vertical}
 
 <div class="header">
 <div>
-<h1>سلام 👋</h1>
-<div class="date" id="today"></div>
+<h1>سلام قهرمان 🎀</h1>
+<div class="date" id="todayText"></div>
 </div>
-<div class="avatar">ER</div>
+<div class="avatar">🩷</div>
 </div>
 
-<div class="card">
-<div class="label">مطالعه امروز</div>
-<div class="big" id="todayStudy">0 دقیقه</div>
+<div class="card hero">
+
+<div class="label">هدف مطالعه امروز 🎯</div>
+
+<div class="big">
+<span id="todayMinutes">0</span>
+<span> / </span>
+<span id="goalMinutes">300</span>
+<span> دقیقه</span>
+</div>
 
 <div class="progress">
-<div id="studyProgress" style="width:0%"></div>
+<div id="goalProgress"></div>
 </div>
 
 <div class="stats">
+
 <div class="stat">
 <b id="homeTests">0</b>
-<span>تست</span>
+<span>📝 تست</span>
 </div>
+
 <div class="stat">
-<b id="homePlans">0</b>
-<span>برنامه امروز</span>
+<b id="homeExecution">0%</b>
+<span>🎯 اجرای برنامه</span>
 </div>
+
 <div class="stat">
-<b id="homePercent">0%</b>
-<span>اجرای برنامه</span>
+<b id="homeSleep">—</b>
+<span>😴 خواب</span>
+</div>
+
 </div>
 </div>
-</div>
+
 
 <div class="section">
-<h2>برنامه امروز</h2>
-<span class="label" id="todayPlanCount">0 فعالیت</span>
+<h2>🌷 برنامه امروز</h2>
+<span class="label" id="homePlanCount">0 فعالیت</span>
 </div>
 
-<div class="card" id="homePlansList"></div>
+<div class="card" id="homePlans"></div>
+
+
+<div class="section">
+<h2>😴 خواب دیشب</h2>
+</div>
+
+<div class="card sleep-card" id="homeSleepCard"></div>
 
 </section>
 
 
-<!-- PLAN -->
-<section id="plan" class="page">
+<!-- PROGRAM -->
+<section id="program" class="page">
 
 <div class="header">
 <div>
 <h1>📅 برنامه من</h1>
-<div class="date">برنامه را خودت تعیین کن</div>
+<div class="date">برنامه‌ای که خودت تعیین می‌کنی</div>
 </div>
 </div>
 
-<div class="card form-card">
+<div class="card">
 
-<h2>افزودن برنامه</h2>
+<h2>➕ برنامه جدید</h2>
 
-<input id="planDate" type="date">
+<input id="pDate" type="date">
 
-<select id="planSubject">
-<option value="زیست‌شناسی">🧬 زیست‌شناسی</option>
-<option value="شیمی">🧪 شیمی</option>
-<option value="فیزیک">⚡ فیزیک</option>
-<option value="ریاضی">📐 ریاضی</option>
-<option value="زمین‌شناسی">🌍 زمین‌شناسی</option>
+<select id="pSubject">
+<option>🧬 زیست‌شناسی</option>
+<option>🧪 شیمی</option>
+<option>⚡ فیزیک</option>
+<option>📐 ریاضی</option>
+<option>🌍 زمین‌شناسی</option>
+<option>📖 فارسی</option>
+<option>🕌 دین و زندگی</option>
+<option>📝 عربی</option>
+<option>🇬🇧 زبان انگلیسی</option>
 </select>
 
-<input id="planTopic" placeholder="مبحث / گفتار">
+<input id="pTopic" placeholder="مبحث / گفتار">
 
 <div class="row">
-<input id="planMinutes" type="number" placeholder="زمان (دقیقه)">
-<input id="planTests" type="number" placeholder="تعداد تست">
+<input id="pMinutes" type="number" placeholder="زمان برنامه (دقیقه)">
+<input id="pTests" type="number" placeholder="تعداد تست برنامه">
 </div>
 
-<button class="primary" onclick="addPlan()">＋ اضافه کردن برنامه</button>
+<button class="primary" onclick="addPlan()">
+🌷 اضافه کردن به برنامه
+</button>
 
 </div>
 
 <div class="section">
-<h2>برنامه‌های من</h2>
+<h2>🗓️ برنامه‌ها</h2>
 </div>
 
 <div id="plansList"></div>
@@ -293,60 +474,125 @@ textarea{min-height:80px;resize:vertical}
 </section>
 
 
-<!-- ADD ACTIVITY -->
+<!-- ACTIVITY -->
 <section id="activity" class="page">
 
 <div class="header">
 <div>
-<h1>➕ ثبت فعالیت</h1>
-<div class="date">هر چیزی را که واقعاً انجام دادی ثبت کن</div>
+<h1>📝 ثبت عملکرد</h1>
+<div class="date">فقط چیزی که واقعاً انجام دادی</div>
 </div>
 </div>
 
 <div class="card">
 
-<select id="actSubject">
-<option value="زیست‌شناسی">🧬 زیست‌شناسی</option>
-<option value="شیمی">🧪 شیمی</option>
-<option value="فیزیک">⚡ فیزیک</option>
-<option value="ریاضی">📐 ریاضی</option>
-<option value="زمین‌شناسی">🌍 زمین‌شناسی</option>
+<h2>📚 فعالیت امروز</h2>
+
+<select id="aPlan"></select>
+
+<select id="aSubject">
+<option>🧬 زیست‌شناسی</option>
+<option>🧪 شیمی</option>
+<option>⚡ فیزیک</option>
+<option>📐 ریاضی</option>
+<option>🌍 زمین‌شناسی</option>
+<option>📖 فارسی</option>
+<option>🕌 دین و زندگی</option>
+<option>📝 عربی</option>
+<option>🇬🇧 زبان انگلیسی</option>
 </select>
 
-<input id="actTopic" placeholder="مبحث">
+<input id="aTopic" placeholder="مبحث">
+
+<input id="aMinutes" type="number" placeholder="واقعاً چند دقیقه خواندی؟">
 
 <div class="row">
-<input id="actMinutes" type="number" placeholder="دقیقه مطالعه">
-<input id="actTests" type="number" placeholder="تعداد تست">
+<input id="aTests" type="number" placeholder="کل تست انجام‌شده">
+<input id="aCorrect" type="number" placeholder="درست ✅">
 </div>
 
 <div class="row">
-<input id="actCorrect" type="number" placeholder="درست">
-<input id="actWrong" type="number" placeholder="غلط">
+<input id="aDoubt" type="number" placeholder="شک‌دار 🤔">
+<input id="aWrong" type="number" placeholder="غلط ❌">
 </div>
 
-<textarea id="actNote" placeholder="توضیحات یا علت اشتباهات"></textarea>
+<input id="aBlank" type="number" placeholder="نزده ⚪">
 
-<button class="primary" onclick="addActivity()">ثبت فعالیت</button>
+<textarea id="aNote" placeholder="نکته / علت غلط‌ها / وضعیت مطالعه"></textarea>
+
+<button class="primary" onclick="addActivity()">
+💗 ثبت عملکرد واقعی
+</button>
 
 </div>
 
 <div class="section">
-<h2>فعالیت‌های امروز</h2>
+<h2>🌸 فعالیت‌های امروز</h2>
 </div>
 
-<div id="todayActivities"></div>
+<div id="activitiesList"></div>
+
+</section>
+
+
+<!-- SLEEP -->
+<section id="sleep" class="page">
+
+<div class="header">
+<div>
+<h1>😴 خواب من</h1>
+<div class="date">خواب خوب = مغز آماده‌تر برای یادگیری ☁️</div>
+</div>
+</div>
+
+<div class="card">
+
+<h2>🌙 خواب دیشب را ثبت کن</h2>
+
+<div class="row">
+<div>
+<div class="label">ساعت خواب</div>
+<input id="sleepStart" type="time">
+</div>
+
+<div>
+<div class="label">ساعت بیداری</div>
+<input id="sleepEnd" type="time">
+</div>
+</div>
+
+<button class="primary" onclick="saveSleep()">
+🌙 ذخیره خواب
+</button>
+
+</div>
+
+<div class="card sleep-card">
+
+<div class="sleep-time">
+<span id="savedStart">—</span>
+<span>→</span>
+<span id="savedEnd">—</span>
+</div>
+
+<div class="sleep-duration" id="sleepDuration">
+هنوز ثبت نشده
+</div>
+
+<div class="sleep-status" id="sleepStatus"></div>
+
+</div>
 
 </section>
 
 
 <!-- STATS -->
-<section id="statsPage" class="page">
+<section id="stats" class="page">
 
 <div class="header">
 <div>
 <h1>📊 آمار من</h1>
-<div class="date">بر اساس اطلاعاتی که خودت ثبت کرده‌ای</div>
+<div class="date">واقعیت عملکردت اینجاست</div>
 </div>
 </div>
 
@@ -355,18 +601,18 @@ textarea{min-height:80px;resize:vertical}
 <div class="stats">
 
 <div class="stat">
-<b id="statMinutes">0</b>
-<span>دقیقه مطالعه</span>
+<b id="totalMinutes">0</b>
+<span>⏱️ دقیقه</span>
 </div>
 
 <div class="stat">
-<b id="statTests">0</b>
-<span>تست</span>
+<b id="totalTests">0</b>
+<span>📝 تست</span>
 </div>
 
 <div class="stat">
-<b id="statPercent">0%</b>
-<span>درصد تست</span>
+<b id="accuracy">0%</b>
+<span>🎯 عملکرد</span>
 </div>
 
 </div>
@@ -374,7 +620,7 @@ textarea{min-height:80px;resize:vertical}
 </div>
 
 <div class="section">
-<h2>آمار درس‌ها</h2>
+<h2>📚 عملکرد درس‌ها</h2>
 </div>
 
 <div id="subjectStats"></div>
@@ -383,23 +629,21 @@ textarea{min-height:80px;resize:vertical}
 
 
 <!-- REPORT -->
-<section id="reportPage" class="page">
+<section id="report" class="page">
 
 <div class="header">
 <div>
-<h1>📋 گزارش</h1>
-<div class="date">گزارش را برای تحلیل به ChatGPT بده</div>
+<h1>📋 گزارش من</h1>
+<div class="date">آماده برای ارسال به ChatGPT 💌</div>
 </div>
 </div>
 
 <div class="card">
 
-<div class="report" id="reportText">
-هنوز اطلاعاتی ثبت نشده.
-</div>
+<div class="report" id="reportText"></div>
 
 <button class="primary" onclick="copyReport()">
-کپی گزارش برای ChatGPT
+💌 کپی گزارش برای ChatGPT
 </button>
 
 </div>
@@ -409,32 +653,32 @@ textarea{min-height:80px;resize:vertical}
 </div>
 
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 
 <nav class="bottom">
 
 <button class="nav active" onclick="showPage('home',this)">
-<b>⌂</b>
+<b>🏠</b>
 خانه
 </button>
 
-<button class="nav" onclick="showPage('plan',this)">
-<b>▣</b>
+<button class="nav" onclick="showPage('program',this)">
+<b>📅</b>
 برنامه
 </button>
 
 <button class="nav" onclick="showPage('activity',this)">
-<b>＋</b>
+<b>➕</b>
 ثبت
 </button>
 
-<button class="nav" onclick="showPage('statsPage',this)">
-<b>◔</b>
+<button class="nav" onclick="showPage('stats',this)">
+<b>📊</b>
 آمار
 </button>
 
-<button class="nav" onclick="showPage('reportPage',this)">
-<b>▤</b>
+<button class="nav" onclick="showPage('report',this)">
+<b>💌</b>
 گزارش
 </button>
 
@@ -445,33 +689,39 @@ textarea{min-height:80px;resize:vertical}
 
 <script>
 
+let plans=JSON.parse(localStorage.getItem("cutePlans")||"[]");
+let activities=JSON.parse(localStorage.getItem("cuteActivities")||"[]");
+let sleeps=JSON.parse(localStorage.getItem("cuteSleeps")||"{}");
+
+let dailyGoal=300;
+
 const subjects=[
-"زیست‌شناسی",
-"شیمی",
-"فیزیک",
-"ریاضی",
-"زمین‌شناسی"
+"🧬 زیست‌شناسی",
+"🧪 شیمی",
+"⚡ فیزیک",
+"📐 ریاضی",
+"🌍 زمین‌شناسی",
+"📖 فارسی",
+"🕌 دین و زندگی",
+"📝 عربی",
+"🇬🇧 زبان انگلیسی"
 ];
 
-let plans=JSON.parse(localStorage.getItem("plans")||"[]");
-let activities=JSON.parse(localStorage.getItem("activities")||"[]");
+function today(){
+ return new Date().toISOString().split("T")[0];
+}
 
 function save(){
- localStorage.setItem("plans",JSON.stringify(plans));
- localStorage.setItem("activities",JSON.stringify(activities));
+ localStorage.setItem("cutePlans",JSON.stringify(plans));
+ localStorage.setItem("cuteActivities",JSON.stringify(activities));
+ localStorage.setItem("cuteSleeps",JSON.stringify(sleeps));
 }
 
-function today(){
- let d=new Date();
- return d.toISOString().split("T")[0];
-}
-
-function formatDate(d){
- if(!d)return "";
+function dateFa(d){
  return new Date(d+"T12:00:00").toLocaleDateString("fa-IR");
 }
 
-document.getElementById("today").innerText=
+document.getElementById("todayText").innerText=
 new Date().toLocaleDateString("fa-IR",{
  weekday:"long",
  year:"numeric",
@@ -479,43 +729,41 @@ new Date().toLocaleDateString("fa-IR",{
  day:"numeric"
 });
 
-document.getElementById("planDate").value=today();
+document.getElementById("pDate").value=today();
 
 
-function showPage(id,btn){
+function showPage(id,button){
 
- document.querySelectorAll(".page").forEach(p=>{
-  p.classList.remove("active");
- });
-
+ document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
  document.getElementById(id).classList.add("active");
 
- document.querySelectorAll(".nav").forEach(n=>{
-  n.classList.remove("active");
- });
-
- if(btn)btn.classList.add("active");
-
- window.scrollTo(0,0);
+ document.querySelectorAll(".nav").forEach(x=>x.classList.remove("active"));
+ if(button)button.classList.add("active");
 
  if(id==="home")renderHome();
- if(id==="plan")renderPlans();
- if(id==="activity")renderActivities();
- if(id==="statsPage")renderStats();
- if(id==="reportPage")renderReport();
+ if(id==="program")renderPlans();
+ if(id==="activity"){
+  renderPlanSelect();
+  renderActivities();
+ }
+ if(id==="sleep")renderSleep();
+ if(id==="stats")renderStats();
+ if(id==="report")renderReport();
+
+ window.scrollTo(0,0);
 }
 
 
 function addPlan(){
 
- const date=document.getElementById("planDate").value;
- const subject=document.getElementById("planSubject").value;
- const topic=document.getElementById("planTopic").value.trim();
- const minutes=Number(document.getElementById("planMinutes").value)||0;
- const tests=Number(document.getElementById("planTests").value)||0;
+ let date=document.getElementById("pDate").value;
+ let subject=document.getElementById("pSubject").value;
+ let topic=document.getElementById("pTopic").value.trim();
+ let minutes=Number(document.getElementById("pMinutes").value)||0;
+ let tests=Number(document.getElementById("pTests").value)||0;
 
  if(!date||!topic){
-  toast("تاریخ و مبحث را وارد کن");
+  toast("تاریخ و مبحث را وارد کن 🌷");
   return;
  }
 
@@ -531,14 +779,14 @@ function addPlan(){
 
  save();
 
- document.getElementById("planTopic").value="";
- document.getElementById("planMinutes").value="";
- document.getElementById("planTests").value="";
+ document.getElementById("pTopic").value="";
+ document.getElementById("pMinutes").value="";
+ document.getElementById("pTests").value="";
 
  renderPlans();
  renderHome();
 
- toast("برنامه ذخیره شد ✓");
+ toast("برنامه ذخیره شد 🎀");
 }
 
 
@@ -546,18 +794,15 @@ function deletePlan(id){
 
  plans=plans.filter(p=>p.id!==id);
  save();
-
  renderPlans();
  renderHome();
-
  toast("برنامه حذف شد");
 }
 
 
 function togglePlan(id){
 
- const p=plans.find(x=>x.id===id);
-
+ let p=plans.find(x=>x.id===id);
  if(p)p.done=!p.done;
 
  save();
@@ -568,44 +813,42 @@ function togglePlan(id){
 
 function renderPlans(){
 
- const box=document.getElementById("plansList");
+ let box=document.getElementById("plansList");
 
  if(!plans.length){
-  box.innerHTML='<div class="card empty">هنوز برنامه‌ای وارد نکرده‌ای.</div>';
+  box.innerHTML='<div class="card empty">هنوز برنامه‌ای نداری 🌷<br>برنامه‌ات را خودت بساز.</div>';
   return;
  }
 
- const sorted=[...plans].sort((a,b)=>a.date.localeCompare(b.date));
-
- box.innerHTML=sorted.map(p=>`
+ box.innerHTML=[...plans]
+ .sort((a,b)=>a.date.localeCompare(b.date))
+ .map(p=>`
 
  <div class="card">
 
  <div class="task">
 
- <div class="icon">${subjectIcon(p.subject)}</div>
+ <div class="icon">${icon(p.subject)}</div>
 
  <div class="task-info">
 
- <b>${escapeHTML(p.subject)}</b>
+ <b>${esc(p.subject)}</b>
 
- <span>
- ${formatDate(p.date)} · ${escapeHTML(p.topic)}
- </span>
+ <span>${dateFa(p.date)} · ${esc(p.topic)}</span>
 
  <div>
- <span class="badge">${p.minutes} دقیقه</span>
- <span class="badge">${p.tests} تست</span>
+ <span class="badge">⏰ ${p.minutes} دقیقه</span>
+ <span class="badge">📝 ${p.tests} تست</span>
  </div>
 
  </div>
 
  <button class="delete" onclick="togglePlan(${p.id})">
- ${p.done?"✓":"○"}
+ ${p.done?"✅":"⭕"}
  </button>
 
  <button class="delete" onclick="deletePlan(${p.id})">
- حذف
+ 🗑️
  </button>
 
  </div>
@@ -616,62 +859,92 @@ function renderPlans(){
 }
 
 
+function renderPlanSelect(){
+
+ let select=document.getElementById("aPlan");
+
+ let todayPlans=plans.filter(p=>p.date===today());
+
+ select.innerHTML=
+ '<option value="">بدون اتصال به برنامه</option>'+
+ todayPlans.map(p=>
+ `<option value="${p.id}">
+ ${p.subject} - ${p.topic}
+ </option>`
+ ).join("");
+}
+
+
 function addActivity(){
 
- const subject=document.getElementById("actSubject").value;
- const topic=document.getElementById("actTopic").value.trim();
- const minutes=Number(document.getElementById("actMinutes").value)||0;
- const tests=Number(document.getElementById("actTests").value)||0;
- const correct=Number(document.getElementById("actCorrect").value)||0;
- const wrong=Number(document.getElementById("actWrong").value)||0;
- const note=document.getElementById("actNote").value.trim();
+ let planId=Number(document.getElementById("aPlan").value)||null;
+
+ let subject=document.getElementById("aSubject").value;
+ let topic=document.getElementById("aTopic").value.trim();
+
+ let minutes=Number(document.getElementById("aMinutes").value)||0;
+ let tests=Number(document.getElementById("aTests").value)||0;
+
+ let correct=Number(document.getElementById("aCorrect").value)||0;
+ let doubt=Number(document.getElementById("aDoubt").value)||0;
+ let wrong=Number(document.getElementById("aWrong").value)||0;
+ let blank=Number(document.getElementById("aBlank").value)||0;
+
+ let note=document.getElementById("aNote").value.trim();
 
  if(minutes===0&&tests===0){
-  toast("حداقل مطالعه یا تست را وارد کن");
+  toast("زمان مطالعه یا تست را وارد کن 🌸");
   return;
  }
 
  activities.push({
   id:Date.now(),
   date:today(),
+  planId,
   subject,
   topic,
   minutes,
   tests,
   correct,
+  doubt,
   wrong,
+  blank,
   note
  });
+
+ if(planId){
+  let p=plans.find(x=>x.id===planId);
+  if(p)p.done=true;
+ }
 
  save();
 
  [
- "actTopic",
- "actMinutes",
- "actTests",
- "actCorrect",
- "actWrong",
- "actNote"
- ].forEach(id=>{
-  document.getElementById(id).value="";
- });
+ "aTopic",
+ "aMinutes",
+ "aTests",
+ "aCorrect",
+ "aDoubt",
+ "aWrong",
+ "aBlank",
+ "aNote"
+ ].forEach(id=>document.getElementById(id).value="");
 
  renderActivities();
  renderHome();
- renderStats();
 
- toast("فعالیت ثبت شد ✓");
+ toast("عملکرد واقعی ثبت شد 💗");
 }
 
 
 function renderActivities(){
 
- const box=document.getElementById("todayActivities");
+ let box=document.getElementById("activitiesList");
 
- const arr=activities.filter(a=>a.date===today());
+ let arr=activities.filter(a=>a.date===today());
 
  if(!arr.length){
-  box.innerHTML='<div class="card empty">هنوز فعالیتی برای امروز ثبت نکرده‌ای.</div>';
+  box.innerHTML='<div class="card empty">هنوز چیزی ثبت نکردی ☁️</div>';
   return;
  }
 
@@ -681,17 +954,24 @@ function renderActivities(){
 
  <div class="task">
 
- <div class="icon">${subjectIcon(a.subject)}</div>
+ <div class="icon">${icon(a.subject)}</div>
 
  <div class="task-info">
 
- <b>${escapeHTML(a.subject)}</b>
+ <b>${esc(a.subject)}</b>
 
- <span>${escapeHTML(a.topic||"بدون مبحث")}</span>
+ <span>${esc(a.topic||"بدون مبحث")}</span>
 
  <div>
- <span class="badge">${a.minutes} دقیقه</span>
- <span class="badge">${a.tests} تست</span>
+ <span class="badge">⏰ ${a.minutes} دقیقه</span>
+ <span class="badge">📝 ${a.tests} تست</span>
+ </div>
+
+ <div>
+ <span class="badge">✅ ${a.correct}</span>
+ <span class="badge">🤔 ${a.doubt}</span>
+ <span class="badge">❌ ${a.wrong}</span>
+ <span class="badge">⚪ ${a.blank}</span>
  </div>
 
  </div>
@@ -706,99 +986,96 @@ function renderActivities(){
 
 function renderHome(){
 
- const td=today();
+ let arr=activities.filter(a=>a.date===today());
+ let todayPlans=plans.filter(p=>p.date===today());
 
- const todayActivities=activities.filter(a=>a.date===td);
- const todayPlans=plans.filter(p=>p.date===td);
+ let minutes=arr.reduce((s,a)=>s+a.minutes,0);
+ let tests=arr.reduce((s,a)=>s+a.tests,0);
 
- const minutes=todayActivities.reduce((s,a)=>s+a.minutes,0);
- const tests=todayActivities.reduce((s,a)=>s+a.tests,0);
+ let done=todayPlans.filter(p=>p.done).length;
 
- const plannedMinutes=todayPlans.reduce((s,p)=>s+p.minutes,0);
- const donePlans=todayPlans.filter(p=>p.done).length;
+ let execution=todayPlans.length?
+ Math.round(done/todayPlans.length*100):0;
 
- document.getElementById("todayStudy").innerText=
- minutes+" دقیقه";
+ document.getElementById("todayMinutes").innerText=minutes;
+ document.getElementById("goalMinutes").innerText=dailyGoal;
 
  document.getElementById("homeTests").innerText=tests;
- document.getElementById("homePlans").innerText=todayPlans.length;
+ document.getElementById("homeExecution").innerText=execution+"%";
 
- const percent=todayPlans.length?
- Math.round(donePlans/todayPlans.length*100):0;
+ document.getElementById("goalProgress").style.width=
+ Math.min(100,minutes/dailyGoal*100)+"%";
 
- document.getElementById("homePercent").innerText=percent+"%";
-
- const target=plannedMinutes||300;
-
- const progress=Math.min(100,Math.round(minutes/target*100));
-
- document.getElementById("studyProgress").style.width=
- progress+"%";
-
- document.getElementById("todayPlanCount").innerText=
+ document.getElementById("homePlanCount").innerText=
  todayPlans.length+" فعالیت";
 
- const box=document.getElementById("homePlansList");
+ let box=document.getElementById("homePlans");
 
  if(!todayPlans.length){
   box.innerHTML=
-  '<div class="empty">برای امروز هنوز برنامه‌ای نداری.<br>از بخش «برنامه» اضافه کن.</div>';
-  return;
+  '<div class="empty">برای امروز برنامه‌ای نداری 🌷<br>از بخش «برنامه» اضافه کن.</div>';
+ }else{
+
+  box.innerHTML=todayPlans.map(p=>`
+
+  <div class="task">
+
+  <div class="icon">${icon(p.subject)}</div>
+
+  <div class="task-info">
+
+  <b>${esc(p.subject)}</b>
+
+  <span>${esc(p.topic)} · ${p.minutes} دقیقه</span>
+
+  </div>
+
+  <button class="delete" onclick="togglePlan(${p.id})">
+  ${p.done?"✅":"⭕"}
+  </button>
+
+  </div>
+
+  `).join("");
  }
 
- box.innerHTML=todayPlans.map(p=>`
-
- <div class="task">
-
- <div class="icon">${subjectIcon(p.subject)}</div>
-
- <div class="task-info">
-
- <b>${escapeHTML(p.subject)}</b>
-
- <span>${escapeHTML(p.topic)} · ${p.minutes} دقیقه</span>
-
- </div>
-
- <button class="delete"
- onclick="togglePlan(${p.id})">
- ${p.done?"✓":"○"}
- </button>
-
- </div>
-
- `).join("");
+ renderSleepHome();
 }
 
 
 function renderStats(){
 
- const totalMinutes=activities.reduce((s,a)=>s+a.minutes,0);
- const totalTests=activities.reduce((s,a)=>s+a.tests,0);
- const correct=activities.reduce((s,a)=>s+a.correct,0);
- const wrong=activities.reduce((s,a)=>s+a.wrong,0);
+ let totalMinutes=activities.reduce((s,a)=>s+a.minutes,0);
+ let totalTests=activities.reduce((s,a)=>s+a.tests,0);
 
- const answered=correct+wrong;
+ let correct=activities.reduce((s,a)=>s+a.correct,0);
+ let doubt=activities.reduce((s,a)=>s+a.doubt,0);
+ let wrong=activities.reduce((s,a)=>s+a.wrong,0);
 
- const percent=answered?
+ let answered=correct+doubt+wrong;
+
+ let accuracy=answered?
  Math.round(correct/answered*100):0;
 
- document.getElementById("statMinutes").innerText=totalMinutes;
- document.getElementById("statTests").innerText=totalTests;
- document.getElementById("statPercent").innerText=percent+"%";
+ document.getElementById("totalMinutes").innerText=totalMinutes;
+ document.getElementById("totalTests").innerText=totalTests;
+ document.getElementById("accuracy").innerText=accuracy+"%";
 
- const box=document.getElementById("subjectStats");
+ let box=document.getElementById("subjectStats");
 
  box.innerHTML=subjects.map(s=>{
 
-  const arr=activities.filter(a=>a.subject===s);
+  let arr=activities.filter(a=>a.subject===s);
 
-  const min=arr.reduce((x,a)=>x+a.minutes,0);
-  const tests=arr.reduce((x,a)=>x+a.tests,0);
-  const c=arr.reduce((x,a)=>x+a.correct,0);
-  const w=arr.reduce((x,a)=>x+a.wrong,0);
+  let min=arr.reduce((x,a)=>x+a.minutes,0);
+  let tests=arr.reduce((x,a)=>x+a.tests,0);
 
-  const per=c+w?Math.round(c/(c+w)*100):0;
+  let c=arr.reduce((x,a)=>x+a.correct,0);
+  let d=arr.reduce((x,a)=>x+a.doubt,0);
+  let w=arr.reduce((x,a)=>x+a.wrong,0);
+
+  let ans=c+d+w;
+  let per=ans?Math.round(c/ans*100):0;
 
   return `
 
@@ -806,15 +1083,19 @@ function renderStats(){
 
   <div class="task">
 
-  <div class="icon">${subjectIcon(s)}</div>
+  <div class="icon">${icon(s)}</div>
 
   <div class="task-info">
 
-  <b>${s}</b>
+  <b>${esc(s)}</b>
 
-  <span>
-  ${min} دقیقه مطالعه · ${tests} تست
-  </span>
+  <span>${min} دقیقه · ${tests} تست</span>
+
+  <div>
+  <span class="badge">✅ ${c}</span>
+  <span class="badge">🤔 ${d}</span>
+  <span class="badge">❌ ${w}</span>
+  </div>
 
   </div>
 
@@ -830,57 +1111,205 @@ function renderStats(){
 }
 
 
+function saveSleep(){
+
+ let start=document.getElementById("sleepStart").value;
+ let end=document.getElementById("sleepEnd").value;
+
+ if(!start||!end){
+  toast("ساعت خواب و بیداری را وارد کن 🌙");
+  return;
+ }
+
+ sleeps[today()]={start,end};
+
+ save();
+ renderSleep();
+ renderHome();
+
+ toast("خواب ثبت شد 🌙");
+}
+
+
+function sleepHours(start,end){
+
+ let a=start.split(":").map(Number);
+ let b=end.split(":").map(Number);
+
+ let startMin=a[0]*60+a[1];
+ let endMin=b[0]*60+b[1];
+
+ if(endMin<=startMin)endMin+=1440;
+
+ return endMin-startMin;
+}
+
+
+function sleepText(minutes){
+
+ let h=Math.floor(minutes/60);
+ let m=minutes%60;
+
+ return h+" ساعت و "+m+" دقیقه";
+}
+
+
+function sleepStatus(minutes){
+
+ if(minutes>=450)return "🌸 خواب خوب و کافی";
+ if(minutes>=360)return "☁️ خواب متوسط";
+ return "🥱 خواب کم؛ مراقب ریکاوری باش";
+}
+
+
+function renderSleep(){
+
+ let s=sleeps[today()];
+
+ if(!s){
+  document.getElementById("savedStart").innerText="—";
+  document.getElementById("savedEnd").innerText="—";
+  document.getElementById("sleepDuration").innerText="هنوز ثبت نشده";
+  document.getElementById("sleepStatus").innerText="";
+  return;
+ }
+
+ let min=sleepHours(s.start,s.end);
+
+ document.getElementById("savedStart").innerText=s.start;
+ document.getElementById("savedEnd").innerText=s.end;
+ document.getElementById("sleepDuration").innerText=sleepText(min);
+ document.getElementById("sleepStatus").innerText=sleepStatus(min);
+}
+
+
+function renderSleepHome(){
+
+ let s=sleeps[today()];
+ let box=document.getElementById("homeSleepCard");
+
+ if(!s){
+  box.innerHTML=
+  '<div class="empty">هنوز خواب دیشبت رو ثبت نکردی 🌙</div>';
+  document.getElementById("homeSleep").innerText="—";
+  return;
+ }
+
+ let min=sleepHours(s.start,s.end);
+ let h=Math.floor(min/60);
+
+ document.getElementById("homeSleep").innerText=h+"س";
+
+ box.innerHTML=`
+
+ <div class="sleep-time">
+ <span>🌙 ${s.start}</span>
+ <span>☀️ ${s.end}</span>
+ </div>
+
+ <div class="sleep-duration">
+ ${sleepText(min)}
+ </div>
+
+ <div class="sleep-status">
+ ${sleepStatus(min)}
+ </div>
+
+ `;
+}
+
+
 function renderReport(){
 
- const totalMinutes=activities.reduce((s,a)=>s+a.minutes,0);
- const totalTests=activities.reduce((s,a)=>s+a.tests,0);
+ let totalMin=activities.reduce((s,a)=>s+a.minutes,0);
+ let totalTests=activities.reduce((s,a)=>s+a.tests,0);
 
- const correct=activities.reduce((s,a)=>s+a.correct,0);
- const wrong=activities.reduce((s,a)=>s+a.wrong,0);
+ let correct=activities.reduce((s,a)=>s+a.correct,0);
+ let doubt=activities.reduce((s,a)=>s+a.doubt,0);
+ let wrong=activities.reduce((s,a)=>s+a.wrong,0);
+ let blank=activities.reduce((s,a)=>s+a.blank,0);
 
- const answered=correct+wrong;
- const percent=answered?
- Math.round(correct/answered*100):0;
+ let answered=correct+doubt+wrong;
+ let accuracy=answered?Math.round(correct/answered*100):0;
 
- const donePlans=plans.filter(p=>p.done).length;
+ let donePlans=plans.filter(p=>p.done).length;
 
  let text=
-`گزارش عملکرد کنکور
+`🎀 گزارش عملکرد کنکور من
 
-مطالعه کل: ${totalMinutes} دقیقه
-تعداد تست: ${totalTests}
-درصد تست‌های پاسخ‌داده‌شده: ${percent}%
+⏱️ مطالعه واقعی:
+${totalMin} دقیقه
 
-اجرای برنامه:
-${donePlans} برنامه انجام‌شده از ${plans.length} برنامه
+📝 تست:
+${totalTests}
 
-آمار درس‌ها:
+نتیجه تست‌ها:
+✅ درست: ${correct}
+🤔 شک‌دار: ${doubt}
+❌ غلط: ${wrong}
+⚪ نزده: ${blank}
+
+🎯 دقت تست:
+${accuracy}%
+
+📅 اجرای برنامه:
+${donePlans} برنامه از ${plans.length} برنامه انجام شده
 `;
 
- subjects.forEach(s=>{
+ let sleep=sleeps[today()];
 
-  const arr=activities.filter(a=>a.subject===s);
+ if(sleep){
+  let mins=sleepHours(sleep.start,sleep.end);
+  text+=`
 
-  const min=arr.reduce((x,a)=>x+a.minutes,0);
-  const tests=arr.reduce((x,a)=>x+a.tests,0);
-  const c=arr.reduce((x,a)=>x+a.correct,0);
-  const w=arr.reduce((x,a)=>x+a.wrong,0);
+😴 خواب:
+${sleep.start} تا ${sleep.end}
+مدت: ${sleepText(mins)}
+`;
+ }
 
-  const per=c+w?Math.round(c/(c+w)*100):0;
+ text+=`
 
-  text+=
-`\n${s}: ${min} دقیقه، ${tests} تست، درصد ${per}%`;
+━━━━━━━━━━━━━━
+
+📚 مقایسه برنامه و عملکرد:
+
+`;
+
+ plans.filter(p=>p.date===today()).forEach(p=>{
+
+  let related=activities.filter(a=>a.planId===p.id);
+
+  let realMin=related.reduce((s,a)=>s+a.minutes,0);
+  let realTests=related.reduce((s,a)=>s+a.tests,0);
+
+  let timePercent=p.minutes?
+  Math.round(realMin/p.minutes*100):0;
+
+  let testPercent=p.tests?
+  Math.round(realTests/p.tests*100):0;
+
+  text+=`
+
+${p.subject} — ${p.topic}
+
+⏰ برنامه: ${p.minutes} دقیقه
+⏱️ واقعی: ${realMin} دقیقه
+🎯 اجرای زمانی: ${timePercent}%
+
+📝 تست برنامه: ${p.tests}
+✏️ تست واقعی: ${realTests}
+📊 اجرای تست: ${testPercent}%
+`;
 
  });
 
  text+=`
 
-از این داده‌ها عملکرد من را مثل یک مشاور سخت‌گیر کنکور تحلیل کن و بگو:
-1. نقاط قوت من چیست؟
-2. مهم‌ترین ضعف من چیست؟
-3. چه چیزی را باید هفته بعد تغییر بدهم؟
-4. آیا حجم مطالعه و تست من کافی بوده؟
-5. برای هفته بعد چه اولویت‌هایی داشته باشم؟`;
+━━━━━━━━━━━━━━
+
+💌 این گزارش را برای تحلیل به مشاور کنکور بده.
+`;
 
  document.getElementById("reportText").innerText=text;
 }
@@ -888,27 +1317,33 @@ ${donePlans} برنامه انجام‌شده از ${plans.length} برنامه
 
 function copyReport(){
 
- const text=document.getElementById("reportText").innerText;
+ let text=document.getElementById("reportText").innerText;
 
  navigator.clipboard.writeText(text)
- .then(()=>toast("گزارش کپی شد ✓"))
- .catch(()=>toast("کپی انجام نشد؛ متن را دستی انتخاب کن"));
+ .then(()=>toast("گزارش کپی شد 💌"))
+ .catch(()=>toast("کپی نشد؛ متن را دستی انتخاب کن"));
 }
 
 
-function subjectIcon(s){
+function icon(s){
 
- if(s==="زیست‌شناسی")return "🧬";
- if(s==="شیمی")return "🧪";
- if(s==="فیزیک")return "⚡";
- if(s==="ریاضی")return "📐";
- return "🌍";
+ if(s.includes("زیست"))return"🧬";
+ if(s.includes("شیمی"))return"🧪";
+ if(s.includes("فیزیک"))return"⚡";
+ if(s.includes("ریاضی"))return"📐";
+ if(s.includes("زمین"))return"🌍";
+ if(s.includes("فارسی"))return"📖";
+ if(s.includes("دین"))return"🕌";
+ if(s.includes("عربی"))return"📝";
+ if(s.includes("زبان"))return"🇬🇧";
+
+ return"🌷";
 }
 
 
-function escapeHTML(text){
+function esc(t){
 
- return String(text)
+ return String(t)
  .replaceAll("&","&amp;")
  .replaceAll("<","&lt;")
  .replaceAll(">","&gt;")
@@ -917,11 +1352,11 @@ function escapeHTML(text){
 }
 
 
-function toast(message){
+function toast(msg){
 
- const t=document.getElementById("toast");
+ let t=document.getElementById("toast");
 
- t.innerText=message;
+ t.innerText=msg;
  t.style.display="block";
 
  setTimeout(()=>{
@@ -933,6 +1368,7 @@ function toast(message){
 renderHome();
 renderPlans();
 renderActivities();
+renderSleep();
 renderStats();
 renderReport();
 
