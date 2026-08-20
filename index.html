@@ -2,330 +2,312 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#f8dce9">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>دفتر کنکور من 🎀</title>
 
 <style>
 *{box-sizing:border-box}
 
 body{
- margin:0;
- background:linear-gradient(180deg,#fff8fc,#f3f9ff);
- color:#3d3b43;
- font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
+background:linear-gradient(180deg,#fff8fc,#f2f9ff);
+color:#45424b;
 }
 
 .app{
- max-width:520px;
- margin:auto;
- min-height:100vh;
- padding:18px 15px 110px;
+max-width:520px;
+margin:auto;
+min-height:100vh;
+padding:18px 15px 105px;
 }
 
 .page{display:none}
 .page.active{display:block}
 
 .header{
- display:flex;
- justify-content:space-between;
- align-items:center;
- margin-bottom:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:18px;
 }
 
-h1{
- margin:0;
- font-size:24px;
-}
+h1{margin:0;font-size:23px}
+h2{margin:0;font-size:17px}
 
-h2{
- margin:0;
- font-size:18px;
-}
-
-.label,.date{
- color:#9995a0;
- font-size:12px;
+.label{
+font-size:11px;
+color:#99939d;
 }
 
 .avatar{
- width:47px;
- height:47px;
- display:grid;
- place-items:center;
- border-radius:17px;
- background:linear-gradient(135deg,#f7c6dd,#c5e7ff);
- box-shadow:0 7px 20px #e6dce3;
+width:48px;
+height:48px;
+border-radius:17px;
+display:grid;
+place-items:center;
+font-size:23px;
+background:linear-gradient(135deg,#f8c9df,#c7e9ff);
 }
 
 .card{
- background:rgba(255,255,255,.94);
- border-radius:24px;
- padding:17px;
- margin-bottom:14px;
- box-shadow:0 7px 25px rgba(140,140,170,.10);
+background:white;
+border-radius:23px;
+padding:17px;
+margin-bottom:14px;
+box-shadow:0 8px 25px rgba(140,140,160,.10);
 }
 
 .hero{
- background:linear-gradient(135deg,#ffe5f0,#e2f3ff);
+background:linear-gradient(135deg,#ffe5f1,#e0f3ff);
 }
 
 .big{
- font-size:30px;
- font-weight:800;
- margin:8px 0 13px;
+font-size:29px;
+font-weight:800;
+margin:8px 0 12px;
 }
 
 .progress{
- height:10px;
- background:#eeeeF3;
- border-radius:20px;
- overflow:hidden;
+height:10px;
+background:#eeeef2;
+border-radius:20px;
+overflow:hidden;
 }
 
 .progress div{
- height:100%;
- background:linear-gradient(90deg,#efa9c8,#9bd8f5);
- border-radius:20px;
+height:100%;
+width:0;
+background:linear-gradient(90deg,#eea7c8,#9ed8f5);
+border-radius:20px;
 }
 
 .stats{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:8px;
- margin-top:14px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+margin-top:13px;
 }
 
 .stat{
- background:#faf8fb;
- border-radius:16px;
- padding:10px 5px;
- text-align:center;
+background:#faf8fb;
+padding:10px 5px;
+border-radius:15px;
+text-align:center;
 }
 
 .stat b{
- display:block;
- font-size:16px;
+display:block;
+font-size:16px;
 }
 
 .stat span{
- font-size:10px;
- color:#999;
+font-size:10px;
+color:#999;
 }
 
 .section{
- display:flex;
- justify-content:space-between;
- align-items:center;
- margin:21px 3px 10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:20px 3px 10px;
 }
 
 .task{
- display:flex;
- align-items:center;
- gap:10px;
- padding:12px 0;
- border-bottom:1px solid #f0edf1;
+display:flex;
+align-items:center;
+gap:9px;
+padding:11px 0;
+border-bottom:1px solid #f1edf1;
 }
 
 .task:last-child{border-bottom:0}
 
 .icon{
- width:43px;
- height:43px;
- border-radius:15px;
- background:#f6f4f8;
- display:grid;
- place-items:center;
- font-size:21px;
- flex:none;
+width:43px;
+height:43px;
+border-radius:15px;
+background:#f7f4f8;
+display:grid;
+place-items:center;
+font-size:21px;
+flex:none;
 }
 
 .task-info{
- flex:1;
- min-width:0;
+flex:1;
+min-width:0;
 }
 
 .task-info b{
- display:block;
- font-size:13px;
+display:block;
+font-size:13px;
 }
 
 .task-info span{
- color:#94919b;
- font-size:11px;
+font-size:11px;
+color:#96919b;
 }
 
 .badge{
- display:inline-block;
- background:#f5f1f5;
- padding:4px 7px;
- border-radius:8px;
- margin:4px 2px 0;
- font-size:9px;
-}
-
-button{
- font-family:inherit;
- cursor:pointer;
-}
-
-.primary{
- width:100%;
- border:0;
- padding:14px;
- border-radius:16px;
- color:white;
- font-weight:800;
- background:linear-gradient(135deg,#eea8c9,#9dd8f6);
- box-shadow:0 7px 18px rgba(210,160,190,.22);
-}
-
-.secondary{
- width:100%;
- border:0;
- padding:12px;
- border-radius:15px;
- background:#f2f1f5;
- color:#555;
- margin-top:8px;
-}
-
-.danger{
- border:0;
- background:#fff0f3;
- color:#d96d8f;
- padding:8px 10px;
- border-radius:10px;
+display:inline-block;
+font-size:9px;
+background:#f5f2f6;
+padding:4px 7px;
+border-radius:8px;
+margin:4px 2px 0;
 }
 
 input,select,textarea{
- width:100%;
- padding:12px;
- margin:5px 0;
- border:1px solid #e6e2e7;
- border-radius:14px;
- background:white;
- color:#444;
- outline:none;
- font-family:inherit;
-}
-
-input:focus,select:focus,textarea:focus{
- border-color:#d9b4c9;
+width:100%;
+padding:12px;
+margin:5px 0;
+border:1px solid #e6e1e7;
+border-radius:14px;
+background:white;
+font-family:inherit;
+color:#444;
+outline:none;
 }
 
 textarea{
- min-height:75px;
- resize:vertical;
+min-height:75px;
+resize:vertical;
 }
 
 .row{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:8px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+}
+
+button{
+font-family:inherit;
+cursor:pointer;
+}
+
+.primary{
+width:100%;
+border:0;
+padding:14px;
+border-radius:16px;
+background:linear-gradient(135deg,#eea7c8,#9ed8f5);
+color:white;
+font-weight:800;
+}
+
+.secondary{
+width:100%;
+border:0;
+padding:12px;
+border-radius:15px;
+background:#f3f1f5;
+color:#555;
+margin-top:8px;
+}
+
+.danger{
+border:0;
+background:#fff0f3;
+color:#d66e91;
+padding:8px 10px;
+border-radius:10px;
+font-size:12px;
 }
 
 .empty{
- text-align:center;
- color:#999;
- font-size:13px;
- line-height:2;
- padding:20px 5px;
+text-align:center;
+padding:20px 5px;
+color:#999;
+font-size:12px;
+line-height:2;
 }
 
-.sleep-card{
- background:linear-gradient(135deg,#e5f4ff,#fde5f1);
+.sleep{
+background:linear-gradient(135deg,#e4f4ff,#fde4f0);
 }
 
 .sleep-time{
- display:flex;
- justify-content:space-between;
- font-size:15px;
- margin-bottom:10px;
+display:flex;
+justify-content:space-between;
+font-size:14px;
+margin:8px 0;
 }
 
 .sleep-duration{
- text-align:center;
- font-size:25px;
- font-weight:800;
+font-size:25px;
+font-weight:800;
+text-align:center;
+margin:8px 0;
 }
 
 .sleep-status{
- text-align:center;
- color:#777;
- font-size:12px;
- margin-top:5px;
+text-align:center;
+font-size:11px;
+color:#777;
 }
 
 .report{
- background:#faf8fb;
- border-radius:17px;
- padding:15px;
- white-space:pre-wrap;
- line-height:1.9;
- font-size:12px;
+white-space:pre-wrap;
+background:#faf8fb;
+border-radius:16px;
+padding:14px;
+font-size:12px;
+line-height:1.9;
 }
 
 .bottom{
- position:fixed;
- left:50%;
- bottom:0;
- transform:translateX(-50%);
- width:min(520px,100%);
- padding:9px 5px calc(9px + env(safe-area-inset-bottom));
- background:rgba(255,255,255,.96);
- backdrop-filter:blur(15px);
- border-top:1px solid #eee;
- display:grid;
- grid-template-columns:repeat(5,1fr);
- z-index:30;
+position:fixed;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+width:min(520px,100%);
+padding:8px 4px calc(8px + env(safe-area-inset-bottom));
+background:rgba(255,255,255,.97);
+backdrop-filter:blur(15px);
+border-top:1px solid #eee;
+display:grid;
+grid-template-columns:repeat(6,1fr);
+z-index:50;
 }
 
 .nav{
- border:0;
- background:none;
- color:#999;
- display:flex;
- flex-direction:column;
- align-items:center;
- gap:3px;
- font-size:9px;
+border:0;
+background:none;
+color:#999;
+font-size:8px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:3px;
 }
 
-.nav b{font-size:19px}
+.nav b{font-size:18px}
 
 .nav.active{
- color:#df8db4;
- font-weight:800;
+color:#df8db3;
+font-weight:bold;
 }
 
 .toast{
- display:none;
- position:fixed;
- left:50%;
- bottom:90px;
- transform:translateX(-50%);
- background:#45434a;
- color:white;
- padding:10px 17px;
- border-radius:13px;
- font-size:12px;
- z-index:100;
+display:none;
+position:fixed;
+bottom:90px;
+left:50%;
+transform:translateX(-50%);
+background:#444;
+color:white;
+padding:10px 16px;
+border-radius:13px;
+font-size:12px;
+z-index:100;
 }
 
-.compare{
- background:#f8f5f9;
- border-radius:15px;
- padding:12px;
- margin-top:8px;
- font-size:11px;
- line-height:2;
+hr{
+border:0;
+border-top:1px solid #eee;
+margin:14px 0;
 }
-
-.good{color:#4f9d71}
-.warn{color:#d99455}
-.bad{color:#d76e8b}
 </style>
 </head>
 
@@ -334,74 +316,71 @@ textarea{
 <div class="app">
 
 <!-- HOME -->
+
 <section id="home" class="page active">
 
 <div class="header">
 <div>
 <h1>سلام قهرمان 🎀</h1>
-<div class="date" id="todayText"></div>
+<div class="label" id="todayLabel"></div>
 </div>
 <div class="avatar">🩷</div>
 </div>
 
 <div class="card hero">
 
-<div class="label">هدف مطالعه امروز 🎯</div>
+<div class="label">مطالعه امروز 🎯</div>
 
 <div class="big">
-<span id="todayMinutes">0</span>
- /
-<span>300</span>
- دقیقه
+<span id="homeMinutes">0</span> دقیقه
 </div>
 
 <div class="progress">
-<div id="goalProgress"></div>
+<div id="homeProgress"></div>
 </div>
 
 <div class="stats">
+
 <div class="stat">
 <b id="homeTests">0</b>
 <span>📝 تست</span>
 </div>
 
 <div class="stat">
-<b id="homeExecution">0%</b>
-<span>🎯 اجرا</span>
+<b id="homeAccuracy">0%</b>
+<span>🎯 دقت</span>
 </div>
 
 <div class="stat">
 <b id="homeSleep">—</b>
 <span>😴 خواب</span>
 </div>
-</div>
 
+</div>
 </div>
 
 <div class="section">
-<h2>🌷 برنامه امروز</h2>
-<span class="label" id="homePlanCount"></span>
+<h2>📚 برنامه امروز</h2>
 </div>
 
 <div class="card" id="homePlans"></div>
 
 <div class="section">
-<h2>😴 خواب دیشب</h2>
+<h2>😴 خواب</h2>
+<button class="danger" onclick="showPage('sleep')">ثبت خواب</button>
 </div>
 
-<div class="card sleep-card" id="homeSleepCard"></div>
+<div class="card sleep" id="homeSleep"></div>
 
 </section>
 
 
 <!-- PROGRAM -->
+
 <section id="program" class="page">
 
 <div class="header">
-<div>
 <h1>📅 برنامه من</h1>
-<div class="date">برنامه‌ات را خودت بساز</div>
-</div>
 </div>
 
 <div class="card">
@@ -422,16 +401,14 @@ textarea{
 <option>🇬🇧 زبان انگلیسی</option>
 </select>
 
-<input id="pTopic" placeholder="مبحث / گفتار">
+<input id="pTopic" placeholder="مبحث / فصل / گفتار">
 
 <div class="row">
-<input id="pMinutes" type="number" placeholder="زمان برنامه">
+<input id="pMinutes" type="number" placeholder="دقیقه">
 <input id="pTests" type="number" placeholder="تعداد تست">
 </div>
 
-<button class="primary" onclick="addPlan()">
-🎀 اضافه کردن برنامه
-</button>
+<button class="primary" onclick="addPlan()">🎀 اضافه کردن برنامه</button>
 
 </div>
 
@@ -441,30 +418,23 @@ textarea{
 
 
 <!-- ACTIVITY -->
+
 <section id="activity" class="page">
 
 <div class="header">
-<div>
 <h1>➕ ثبت عملکرد</h1>
-<div class="date">چیزی که واقعاً انجام دادی</div>
-</div>
 </div>
 
 <div class="card">
 
-<h2>📚 انتخاب برنامه</h2>
+<select id="aPlan" onchange="selectPlan()"></select>
 
-<select id="aPlan" onchange="fillFromPlan()"></select>
+<input id="aSubject" readonly placeholder="درس">
+<input id="aTopic" readonly placeholder="مبحث">
 
-<div class="label">وقتی برنامه را انتخاب کنی، درس و مبحث خودکار پر می‌شوند.</div>
+<input id="aMinutes" type="number" placeholder="⏱️ مطالعه واقعی">
 
-<input id="aSubject" readonly>
-
-<input id="aTopic" readonly>
-
-<input id="aMinutes" type="number" placeholder="⏱️ واقعاً چند دقیقه خواندی؟">
-
-<input id="aTests" type="number" placeholder="📝 تعداد تست واقعی">
+<input id="aTests" type="number" placeholder="📝 تعداد تست">
 
 <div class="row">
 <input id="aCorrect" type="number" placeholder="✅ درست">
@@ -476,16 +446,16 @@ textarea{
 <input id="aBlank" type="number" placeholder="⚪ نزده">
 </div>
 
-<textarea id="aNote" placeholder="یادداشت یا علت اشتباه‌ها"></textarea>
+<textarea id="aNote" placeholder="یادداشت عملکرد"></textarea>
 
 <button class="primary" onclick="addActivity()">
-💗 ثبت عملکرد واقعی
+💗 ثبت عملکرد
 </button>
 
 </div>
 
 <div class="section">
-<h2>🌸 فعالیت‌های امروز</h2>
+<h2>فعالیت‌های امروز 🌸</h2>
 </div>
 
 <div id="activitiesList"></div>
@@ -494,22 +464,21 @@ textarea{
 
 
 <!-- SLEEP -->
+
 <section id="sleep" class="page">
 
 <div class="header">
-<div>
 <h1>😴 خواب من</h1>
-<div class="date">خواب هر روز جدا ذخیره می‌شود ☁️</div>
-</div>
 </div>
 
-<div class="card">
+<div class="card sleep">
 
 <h2>🌙 ثبت خواب</h2>
 
 <input id="sleepDate" type="date">
 
 <div class="row">
+
 <div>
 <div class="label">ساعت خواب</div>
 <input id="sleepStart" type="time">
@@ -519,6 +488,7 @@ textarea{
 <div class="label">ساعت بیداری</div>
 <input id="sleepEnd" type="time">
 </div>
+
 </div>
 
 <button class="primary" onclick="saveSleep()">
@@ -527,71 +497,76 @@ textarea{
 
 </div>
 
-<div id="sleepHistory"></div>
+<div id="sleepList"></div>
 
 </section>
 
 
 <!-- STATS -->
+
 <section id="stats" class="page">
 
 <div class="header">
-<div>
 <h1>📊 آمار من</h1>
-<div class="date">پیشرفت واقعی تو</div>
-</div>
 </div>
 
 <div class="card">
 
 <div class="stats">
+
 <div class="stat">
-<b id="totalMinutes">0</b>
+<b id="statMinutes">0</b>
 <span>⏱️ دقیقه</span>
 </div>
 
 <div class="stat">
-<b id="totalTests">0</b>
+<b id="statTests">0</b>
 <span>📝 تست</span>
 </div>
 
 <div class="stat">
-<b id="accuracy">0%</b>
+<b id="statAccuracy">0%</b>
 <span>🎯 دقت</span>
 </div>
-</div>
 
 </div>
 
-<div id="subjectStats"></div>
+</div>
+
+<div class="section">
+<h2>📅 آمار روزها</h2>
+</div>
+
+<div id="dailyStats"></div>
 
 </section>
 
 
 <!-- REPORT -->
+
 <section id="report" class="page">
 
 <div class="header">
-<div>
-<h1>💌 گزارش امروز</h1>
-<div class="date">آماده ارسال برای مشاور</div>
-</div>
+<h1>💌 گزارش‌ها</h1>
 </div>
 
 <div class="card">
 
-<div class="report" id="reportText"></div>
-
-<button class="primary" onclick="copyReport()">
-💌 کپی گزارش
-</button>
+<div class="label">
+هر گزارش مربوط به یک روز است.
+با حذف گزارش، داده‌های همان روز حذف می‌شوند.
+</div>
 
 </div>
+
+<div id="reportsList"></div>
 
 </section>
 
 </div>
 
+
+<!-- NAV -->
 
 <nav class="bottom">
 
@@ -605,6 +580,10 @@ textarea{
 
 <button class="nav" onclick="showPage('activity',this)">
 <b>➕</b>ثبت
+</button>
+
+<button class="nav" onclick="showPage('sleep',this)">
+<b>😴</b>خواب
 </button>
 
 <button class="nav" onclick="showPage('stats',this)">
@@ -622,815 +601,859 @@ textarea{
 
 <script>
 
-/* اطلاعات قبلی حفظ می‌شوند */
-let plans=JSON.parse(localStorage.getItem("cutePlans")||"[]");
-let activities=JSON.parse(localStorage.getItem("cuteActivities")||"[]");
-let sleeps=JSON.parse(localStorage.getItem("cuteSleeps")||"{}");
+/* =========================
+   DATA
+========================= */
+
+let plans = JSON.parse(localStorage.getItem("cutePlans") || "[]");
+let activities = JSON.parse(localStorage.getItem("cuteActivities") || "[]");
+let sleeps = JSON.parse(localStorage.getItem("cuteSleeps") || "{}");
+
+function saveData(){
+localStorage.setItem("cutePlans",JSON.stringify(plans));
+localStorage.setItem("cuteActivities",JSON.stringify(activities));
+localStorage.setItem("cuteSleeps",JSON.stringify(sleeps));
+}
 
 function today(){
- return new Date().toISOString().split("T")[0];
+return new Date().toISOString().split("T")[0];
 }
 
-function save(){
- localStorage.setItem("cutePlans",JSON.stringify(plans));
- localStorage.setItem("cuteActivities",JSON.stringify(activities));
- localStorage.setItem("cuteSleeps",JSON.stringify(sleeps));
+function faDate(d){
+return new Date(d+"T12:00:00").toLocaleDateString("fa-IR");
 }
 
-function dateFa(d){
- return new Date(d+"T12:00:00").toLocaleDateString("fa-IR");
-}
-
-document.getElementById("todayText").innerText=
+document.getElementById("todayLabel").innerText =
 new Date().toLocaleDateString("fa-IR",{
- weekday:"long",
- year:"numeric",
- month:"long",
- day:"numeric"
+weekday:"long",
+year:"numeric",
+month:"long",
+day:"numeric"
 });
 
-document.getElementById("pDate").value=today();
-document.getElementById("sleepDate").value=today();
+pDate.value=today();
+sleepDate.value=today();
 
+
+/* =========================
+   NAVIGATION
+========================= */
 
 function showPage(id,btn){
 
- document.querySelectorAll(".page")
- .forEach(x=>x.classList.remove("active"));
+document.querySelectorAll(".page")
+.forEach(p=>p.classList.remove("active"));
 
- document.getElementById(id).classList.add("active");
+document.getElementById(id).classList.add("active");
 
- document.querySelectorAll(".nav")
- .forEach(x=>x.classList.remove("active"));
+document.querySelectorAll(".nav")
+.forEach(n=>n.classList.remove("active"));
 
- if(btn)btn.classList.add("active");
+if(btn)btn.classList.add("active");
 
- if(id==="home")renderHome();
- if(id==="program")renderPlans();
- if(id==="activity"){
-  renderPlanSelect();
-  renderActivities();
- }
- if(id==="sleep")renderSleep();
- if(id==="stats")renderStats();
- if(id==="report")renderReport();
+if(id==="home")renderHome();
+if(id==="program")renderPlans();
+if(id==="activity"){
+renderPlanSelect();
+renderActivities();
+}
+if(id==="sleep")renderSleep();
+if(id==="stats")renderStats();
+if(id==="report")renderReports();
 
- window.scrollTo(0,0);
+window.scrollTo(0,0);
 }
 
 
-/* PROGRAM */
+/* =========================
+   PROGRAM
+========================= */
 
 function addPlan(){
 
- let date=pDate.value;
- let subject=pSubject.value;
- let topic=pTopic.value.trim();
- let minutes=Number(pMinutes.value)||0;
- let tests=Number(pTests.value)||0;
-
- if(!date||!topic){
-  toast("تاریخ و مبحث را وارد کن 🌷");
-  return;
- }
-
- plans.push({
-  id:Date.now(),
-  date,
-  subject,
-  topic,
-  minutes,
-  tests,
-  done:false
- });
-
- save();
-
- pTopic.value="";
- pMinutes.value="";
- pTests.value="";
-
- renderPlans();
- renderHome();
-
- toast("برنامه ذخیره شد 🎀");
+if(!pTopic.value.trim()){
+toast("مبحث را وارد کن 🌷");
+return;
 }
 
+plans.push({
+id:Date.now(),
+date:pDate.value,
+subject:pSubject.value,
+topic:pTopic.value.trim(),
+minutes:Number(pMinutes.value)||0,
+tests:Number(pTests.value)||0,
+done:false
+});
+
+saveData();
+
+pTopic.value="";
+pMinutes.value="";
+pTests.value="";
+
+renderPlans();
+renderHome();
+
+toast("برنامه اضافه شد 🎀");
+}
 
 function deletePlan(id){
 
- if(!confirm("این برنامه حذف شود؟"))return;
+if(!confirm("این برنامه حذف شود؟"))return;
 
- plans=plans.filter(p=>p.id!==id);
+plans=plans.filter(p=>p.id!==id);
 
- save();
- renderPlans();
- renderHome();
+saveData();
+renderPlans();
+renderHome();
 
- toast("برنامه حذف شد 🗑️");
+toast("برنامه حذف شد 🗑️");
 }
-
 
 function togglePlan(id){
 
- let p=plans.find(x=>x.id===id);
+let p=plans.find(x=>x.id===id);
 
- if(p)p.done=!p.done;
+if(p)p.done=!p.done;
 
- save();
- renderPlans();
- renderHome();
+saveData();
+renderPlans();
+renderHome();
 }
-
 
 function renderPlans(){
 
- let box=document.getElementById("plansList");
+let box=document.getElementById("plansList");
 
- if(!plans.length){
-  box.innerHTML=
-  '<div class="card empty">هنوز برنامه‌ای نداری 🌷</div>';
-  return;
- }
+if(!plans.length){
+box.innerHTML='<div class="card empty">برنامه‌ای ثبت نشده 🌷</div>';
+return;
+}
 
- box.innerHTML=[...plans]
- .sort((a,b)=>a.date.localeCompare(b.date))
- .map(p=>`
+box.innerHTML=[...plans]
+.sort((a,b)=>a.date.localeCompare(b.date))
+.reverse()
+.map(p=>`
 
- <div class="card">
+<div class="card">
 
- <div class="task">
+<div class="task">
 
- <div class="icon">${icon(p.subject)}</div>
+<div class="icon">${subjectIcon(p.subject)}</div>
 
- <div class="task-info">
+<div class="task-info">
 
- <b>${esc(p.subject)}</b>
- <span>${dateFa(p.date)} · ${esc(p.topic)}</span>
+<b>${esc(p.subject)}</b>
+<span>${faDate(p.date)} · ${esc(p.topic)}</span>
 
- <div>
- <span class="badge">⏰ ${p.minutes} دقیقه</span>
- <span class="badge">📝 ${p.tests} تست</span>
- </div>
+<div>
+<span class="badge">⏰ ${p.minutes} دقیقه</span>
+<span class="badge">📝 ${p.tests} تست</span>
+</div>
 
- </div>
+</div>
 
- <button class="danger"
- onclick="togglePlan(${p.id})">
- ${p.done?"✅":"⭕"}
- </button>
+<button class="danger" onclick="togglePlan(${p.id})">
+${p.done?"✅":"⭕"}
+</button>
 
- <button class="danger"
- onclick="deletePlan(${p.id})">
- 🗑️
- </button>
+<button class="danger" onclick="deletePlan(${p.id})">
+🗑️
+</button>
 
- </div>
+</div>
 
- </div>
+</div>
 
- `).join("");
+`).join("");
 }
 
 
-/* ACTIVITY */
+/* =========================
+   ACTIVITY
+========================= */
 
 function renderPlanSelect(){
 
- let select=document.getElementById("aPlan");
+let select=document.getElementById("aPlan");
 
- let todayPlans=plans.filter(p=>p.date===today());
+let arr=plans.filter(p=>p.date===today());
 
- select.innerHTML=
- '<option value="">انتخاب برنامه امروز 🌷</option>'+
- todayPlans.map(p=>
- `<option value="${p.id}">
- ${p.subject} — ${p.topic}
- </option>`
- ).join("");
+select.innerHTML=
+'<option value="">🌷 انتخاب برنامه امروز</option>'+
+arr.map(p=>`
+<option value="${p.id}">
+${p.subject} — ${p.topic}
+</option>
+`).join("");
 }
 
+function selectPlan(){
 
-function fillFromPlan(){
+let p=plans.find(x=>x.id==aPlan.value);
 
- let id=Number(document.getElementById("aPlan").value);
-
- let p=plans.find(x=>x.id===id);
-
- if(!p){
-  aSubject.value="";
-  aTopic.value="";
-  return;
- }
-
- aSubject.value=p.subject;
- aTopic.value=p.topic;
+if(!p){
+aSubject.value="";
+aTopic.value="";
+return;
 }
 
+aSubject.value=p.subject;
+aTopic.value=p.topic;
+}
 
 function addActivity(){
 
- let planId=Number(aPlan.value)||null;
- let plan=plans.find(p=>p.id===planId);
+let plan=plans.find(x=>x.id==aPlan.value);
 
- let subject=plan?plan.subject:aSubject.value;
- let topic=plan?plan.topic:aTopic.value;
+let subject=plan?plan.subject:aSubject.value;
+let topic=plan?plan.topic:aTopic.value;
 
- let minutes=Number(aMinutes.value)||0;
- let tests=Number(aTests.value)||0;
+let minutes=Number(aMinutes.value)||0;
+let tests=Number(aTests.value)||0;
 
- let correct=Number(aCorrect.value)||0;
- let doubt=Number(aDoubt.value)||0;
- let wrong=Number(aWrong.value)||0;
- let blank=Number(aBlank.value)||0;
+let correct=Number(aCorrect.value)||0;
+let doubt=Number(aDoubt.value)||0;
+let wrong=Number(aWrong.value)||0;
+let blank=Number(aBlank.value)||0;
 
- let note=aNote.value.trim();
+let total=correct+doubt+wrong+blank;
 
- let answers=correct+doubt+wrong+blank;
-
- if(tests>0 && answers!==tests){
-  toast("تعداد درست + شک‌دار + غلط + نزده باید برابر تعداد تست باشد ⚠️");
-  return;
- }
-
- if(minutes===0&&tests===0){
-  toast("زمان یا تست را وارد کن 🌸");
-  return;
- }
-
- activities.push({
-  id:Date.now(),
-  date:today(),
-  planId,
-  subject,
-  topic,
-  minutes,
-  tests,
-  correct,
-  doubt,
-  wrong,
-  blank,
-  note
- });
-
- if(plan)plan.done=true;
-
- save();
-
- aMinutes.value="";
- aTests.value="";
- aCorrect.value="";
- aDoubt.value="";
- aWrong.value="";
- aBlank.value="";
- aNote.value="";
-
- renderActivities();
- renderHome();
-
- toast("عملکرد ثبت شد 💗");
+if(tests!==total){
+toast("جمع درست، شک‌دار، غلط و نزده باید برابر تعداد تست باشد ⚠️");
+return;
 }
 
+if(!subject){
+toast("اول برنامه را انتخاب کن 🌷");
+return;
+}
+
+activities.push({
+id:Date.now(),
+date:today(),
+planId:plan?plan.id:null,
+subject,
+topic,
+minutes,
+tests,
+correct,
+doubt,
+wrong,
+blank,
+note:aNote.value
+});
+
+if(plan)plan.done=true;
+
+saveData();
+
+aMinutes.value="";
+aTests.value="";
+aCorrect.value="";
+aDoubt.value="";
+aWrong.value="";
+aBlank.value="";
+aNote.value="";
+
+renderActivities();
+renderHome();
+
+toast("عملکرد ثبت شد 💗");
+}
 
 function deleteActivity(id){
 
- if(!confirm("این فعالیت حذف شود؟"))return;
+if(!confirm("این فعالیت حذف شود؟"))return;
 
- activities=activities.filter(a=>a.id!==id);
+activities=activities.filter(a=>a.id!==id);
 
- save();
- renderActivities();
- renderHome();
+saveData();
+renderActivities();
+renderHome();
 
- toast("فعالیت حذف شد 🗑️");
+toast("فعالیت حذف شد 🗑️");
 }
-
 
 function renderActivities(){
 
- let box=document.getElementById("activitiesList");
+let arr=activities.filter(a=>a.date===today());
 
- let arr=activities.filter(a=>a.date===today());
+let box=document.getElementById("activitiesList");
 
- if(!arr.length){
-  box.innerHTML=
-  '<div class="card empty">هنوز فعالیتی ثبت نکردی ☁️</div>';
-  return;
- }
+if(!arr.length){
+box.innerHTML='<div class="card empty">هنوز عملکردی ثبت نکردی 🌸</div>';
+return;
+}
 
- box.innerHTML=arr.slice().reverse().map(a=>`
+box.innerHTML=arr.slice().reverse().map(a=>`
 
- <div class="card">
+<div class="card">
 
- <div class="task">
+<div class="task">
 
- <div class="icon">${icon(a.subject)}</div>
+<div class="icon">${subjectIcon(a.subject)}</div>
 
- <div class="task-info">
+<div class="task-info">
 
- <b>${esc(a.subject)}</b>
- <span>${esc(a.topic||"بدون مبحث")}</span>
+<b>${esc(a.subject)}</b>
+<span>${esc(a.topic)}</span>
 
- <div>
- <span class="badge">⏰ ${a.minutes} دقیقه</span>
- <span class="badge">📝 ${a.tests} تست</span>
- </div>
+<div>
+<span class="badge">⏱️ ${a.minutes}</span>
+<span class="badge">📝 ${a.tests}</span>
+<span class="badge">✅ ${a.correct}</span>
+<span class="badge">🤔 ${a.doubt}</span>
+<span class="badge">❌ ${a.wrong}</span>
+<span class="badge">⚪ ${a.blank}</span>
+</div>
 
- <div>
- <span class="badge">✅ ${a.correct}</span>
- <span class="badge">🤔 ${a.doubt}</span>
- <span class="badge">❌ ${a.wrong}</span>
- <span class="badge">⚪ ${a.blank}</span>
- </div>
+</div>
 
- </div>
+<button class="danger"
+onclick="deleteActivity(${a.id})">
+🗑️
+</button>
 
- <button class="danger"
- onclick="deleteActivity(${a.id})">
- 🗑️
- </button>
+</div>
 
- </div>
+</div>
 
- </div>
-
- `).join("");
+`).join("");
 }
 
 
-/* HOME */
-
-function renderHome(){
-
- let arr=activities.filter(a=>a.date===today());
- let todayPlans=plans.filter(p=>p.date===today());
-
- let minutes=arr.reduce((s,a)=>s+a.minutes,0);
- let tests=arr.reduce((s,a)=>s+a.tests,0);
-
- let done=todayPlans.filter(p=>p.done).length;
-
- let execution=todayPlans.length?
- Math.round(done/todayPlans.length*100):0;
-
- todayMinutes.innerText=minutes;
- homeTests.innerText=tests;
- homeExecution.innerText=execution+"%";
-
- goalProgress.style.width=
- Math.min(100,minutes/300*100)+"%";
-
- homePlanCount.innerText=
- todayPlans.length+" فعالیت";
-
- let box=document.getElementById("homePlans");
-
- if(!todayPlans.length){
-
-  box.innerHTML=
-  '<div class="empty">برای امروز برنامه‌ای نداری 🌷<br>از بخش برنامه اضافه کن.</div>';
-
- }else{
-
-  box.innerHTML=todayPlans.map(p=>`
-
-  <div class="task">
-
-  <div class="icon">${icon(p.subject)}</div>
-
-  <div class="task-info">
-  <b>${esc(p.subject)}</b>
-  <span>${esc(p.topic)} · ${p.minutes} دقیقه</span>
-  </div>
-
-  <button class="danger"
-  onclick="togglePlan(${p.id})">
-  ${p.done?"✅":"⭕"}
-  </button>
-
-  </div>
-
-  `).join("");
- }
-
- renderSleepHome();
-}
-
-
-/* SLEEP */
-
-function saveSleep(){
-
- let date=sleepDate.value;
- let start=sleepStart.value;
- let end=sleepEnd.value;
-
- if(!date||!start||!end){
-  toast("تاریخ و ساعت‌ها را وارد کن 🌙");
-  return;
- }
-
- sleeps[date]={start,end};
-
- save();
-
- sleepStart.value="";
- sleepEnd.value="";
-
- renderSleep();
- renderHome();
-
- toast("خواب ذخیره شد 🌙");
-}
-
+/* =========================
+   SLEEP
+========================= */
 
 function sleepMinutes(start,end){
 
- let a=start.split(":").map(Number);
- let b=end.split(":").map(Number);
+let a=start.split(":").map(Number);
+let b=end.split(":").map(Number);
 
- let s=a[0]*60+a[1];
- let e=b[0]*60+b[1];
+let s=a[0]*60+a[1];
+let e=b[0]*60+b[1];
 
- if(e<=s)e+=1440;
+if(e<=s)e+=1440;
 
- return e-s;
+return e-s;
 }
 
+function sleepText(m){
 
-function sleepText(min){
-
- let h=Math.floor(min/60);
- let m=min%60;
-
- return h+" ساعت و "+m+" دقیقه";
+return Math.floor(m/60)+" ساعت و "+(m%60)+" دقیقه";
 }
 
+function saveSleep(){
 
-function sleepStatus(min){
+let date=sleepDate.value;
+let start=sleepStart.value;
+let end=sleepEnd.value;
 
- if(min>=450)return "🌸 خواب خوب و کافی";
- if(min>=360)return "☁️ خواب متوسط";
- return "🥱 خواب کم";
+if(!date||!start||!end){
+toast("تاریخ و ساعت‌ها را وارد کن 🌙");
+return;
 }
 
+sleeps[date]={
+start,
+end
+};
 
-function renderSleep(){
+saveData();
 
- let box=document.getElementById("sleepHistory");
+sleepStart.value="";
+sleepEnd.value="";
 
- let dates=Object.keys(sleeps).sort().reverse();
+renderSleep();
+renderHome();
 
- if(!dates.length){
-  box.innerHTML=
-  '<div class="card empty">هنوز خواب ثبت نکردی 🌙</div>';
-  return;
- }
-
- box.innerHTML=dates.map(d=>{
-
-  let s=sleeps[d];
-  let min=sleepMinutes(s.start,s.end);
-
-  return`
-
-  <div class="card sleep-card">
-
-  <div class="label">${dateFa(d)}</div>
-
-  <div class="sleep-time">
-  <span>🌙 ${s.start}</span>
-  <span>☀️ ${s.end}</span>
-  </div>
-
-  <div class="sleep-duration">
-  ${sleepText(min)}
-  </div>
-
-  <div class="sleep-status">
-  ${sleepStatus(min)}
-  </div>
-
-  <button class="danger"
-  style="width:100%;margin-top:10px"
-  onclick="deleteSleep('${d}')">
-  🗑️ حذف این رکورد
-  </button>
-
-  </div>
-
-  `;
-
- }).join("");
+toast("ساعت خواب ذخیره شد 🌙");
 }
-
 
 function deleteSleep(date){
 
- if(!confirm("رکورد خواب حذف شود؟"))return;
+if(!confirm("اطلاعات خواب این روز حذف شود؟"))return;
 
- delete sleeps[date];
+delete sleeps[date];
 
- save();
- renderSleep();
- renderHome();
+saveData();
+renderSleep();
+renderHome();
 
- toast("خواب حذف شد 🗑️");
+toast("خواب حذف شد 🗑️");
+}
+
+function renderSleep(){
+
+let box=document.getElementById("sleepList");
+
+let dates=Object.keys(sleeps).sort().reverse();
+
+if(!dates.length){
+box.innerHTML='<div class="card empty">هنوز خواب ثبت نکردی 🌙</div>';
+return;
+}
+
+box.innerHTML=dates.map(d=>{
+
+let s=sleeps[d];
+let min=sleepMinutes(s.start,s.end);
+
+return`
+
+<div class="card sleep">
+
+<div class="label">${faDate(d)}</div>
+
+<div class="sleep-time">
+<span>🌙 ${s.start}</span>
+<span>☀️ ${s.end}</span>
+</div>
+
+<div class="sleep-duration">
+${sleepText(min)}
+</div>
+
+<div class="sleep-status">
+${min>=450?"🌸 خواب کافی":"🥱 خواب کم"}
+</div>
+
+<button class="danger"
+style="width:100%;margin-top:10px"
+onclick="deleteSleep('${d}')">
+🗑️ حذف خواب این روز
+</button>
+
+</div>
+
+`;
+
+}).join("");
+}
+
+function renderHomeSleep(){
+
+let box=document.getElementById("homeSleep");
+let s=sleeps[today()];
+
+if(!s){
+box.innerHTML='<div class="empty">هنوز خواب امروز ثبت نشده 🌙</div>';
+homeSleep.innerText="—";
+return;
+}
+
+let min=sleepMinutes(s.start,s.end);
+
+homeSleep.innerHTML=`
+
+<div class="sleep-time">
+<span>🌙 ${s.start}</span>
+<span>☀️ ${s.end}</span>
+</div>
+
+<div class="sleep-duration">
+${sleepText(min)}
+</div>
+
+<div class="sleep-status">
+${min>=450?"🌸 خواب کافی":"🥱 خواب کم"}
+</div>
+
+`;
+
+homeSleep.innerText=Math.floor(min/60)+"س";
 }
 
 
-function renderSleepHome(){
+/* =========================
+   HOME
+========================= */
 
- let s=sleeps[today()];
- let box=document.getElementById("homeSleepCard");
+function renderHome(){
 
- if(!s){
-  box.innerHTML=
-  '<div class="empty">خواب دیشبت ثبت نشده 🌙</div>';
-  homeSleep.innerText="—";
-  return;
- }
+let arr=activities.filter(a=>a.date===today());
+let ps=plans.filter(p=>p.date===today());
 
- let min=sleepMinutes(s.start,s.end);
+let minutes=arr.reduce((s,a)=>s+a.minutes,0);
+let tests=arr.reduce((s,a)=>s+a.tests,0);
+let correct=arr.reduce((s,a)=>s+a.correct,0);
+let doubt=arr.reduce((s,a)=>s+a.doubt,0);
+let wrong=arr.reduce((s,a)=>s+a.wrong,0);
 
- homeSleep.innerText=Math.floor(min/60)+"س";
+let answered=correct+doubt+wrong;
+let accuracy=answered?
+Math.round(correct/answered*100):0;
 
- box.innerHTML=`
+homeMinutes.innerText=minutes;
+homeTests.innerText=tests;
+homeAccuracy.innerText=accuracy+"%";
 
- <div class="sleep-time">
- <span>🌙 ${s.start}</span>
- <span>☀️ ${s.end}</span>
- </div>
+homeProgress.style.width=
+Math.min(100,minutes/300*100)+"%";
 
- <div class="sleep-duration">
- ${sleepText(min)}
- </div>
+let box=document.getElementById("homePlans");
 
- <div class="sleep-status">
- ${sleepStatus(min)}
- </div>
+if(!ps.length){
 
- `;
+box.innerHTML=
+'<div class="empty">برای امروز برنامه‌ای نداری 🌷</div>';
+
+}else{
+
+box.innerHTML=ps.map(p=>`
+
+<div class="task">
+
+<div class="icon">${subjectIcon(p.subject)}</div>
+
+<div class="task-info">
+<b>${esc(p.subject)}</b>
+<span>${esc(p.topic)} · ${p.minutes} دقیقه</span>
+</div>
+
+<span>${p.done?"✅":"⭕"}</span>
+
+</div>
+
+`).join("");
+}
+
+renderHomeSleep();
 }
 
 
-/* STATS */
+/* =========================
+   STATS
+========================= */
 
 function renderStats(){
 
- let totalMinutes=
- activities.reduce((s,a)=>s+a.minutes,0);
+let minutes=activities.reduce((s,a)=>s+a.minutes,0);
+let tests=activities.reduce((s,a)=>s+a.tests,0);
+let correct=activities.reduce((s,a)=>s+a.correct,0);
+let doubt=activities.reduce((s,a)=>s+a.doubt,0);
+let wrong=activities.reduce((s,a)=>s+a.wrong,0);
 
- let totalTests=
- activities.reduce((s,a)=>s+a.tests,0);
+let answered=correct+doubt+wrong;
 
- let correct=
- activities.reduce((s,a)=>s+a.correct,0);
+statMinutes.innerText=minutes;
+statTests.innerText=tests;
+statAccuracy.innerText=
+answered?Math.round(correct/answered*100)+"%":"0%";
 
- let doubt=
- activities.reduce((s,a)=>s+a.doubt,0);
+let dates=getAllDates();
 
- let wrong=
- activities.reduce((s,a)=>s+a.wrong,0);
+let box=document.getElementById("dailyStats");
 
- let answered=correct+doubt+wrong;
+if(!dates.length){
 
- let accuracy=answered?
- Math.round(correct/answered*100):0;
+box.innerHTML=
+'<div class="card empty">هنوز آماری ثبت نشده 🌷</div>';
 
- document.getElementById("totalMinutes").innerText=totalMinutes;
- document.getElementById("totalTests").innerText=totalTests;
- document.getElementById("accuracy").innerText=accuracy+"%";
+return;
+}
 
- let list=[...new Set([
-  "🧬 زیست‌شناسی",
-  "🧪 شیمی",
-  "⚡ فیزیک",
-  "📐 ریاضی",
-  "🌍 زمین‌شناسی",
-  "📖 فارسی",
-  "🕌 دین و زندگی",
-  "📝 عربی",
-  "🇬🇧 زبان انگلیسی"
- ])];
+box.innerHTML=dates.map(d=>{
 
- subjectStats.innerHTML=list.map(s=>{
+let arr=activities.filter(a=>a.date===d);
 
-  let arr=activities.filter(a=>a.subject===s);
+let min=arr.reduce((s,a)=>s+a.minutes,0);
+let tests=arr.reduce((s,a)=>s+a.tests,0);
+let c=arr.reduce((s,a)=>s+a.correct,0);
+let db=arr.reduce((s,a)=>s+a.doubt,0);
+let w=arr.reduce((s,a)=>s+a.wrong,0);
 
-  let min=arr.reduce((x,a)=>x+a.minutes,0);
-  let tests=arr.reduce((x,a)=>x+a.tests,0);
-  let c=arr.reduce((x,a)=>x+a.correct,0);
-  let d=arr.reduce((x,a)=>x+a.doubt,0);
-  let w=arr.reduce((x,a)=>x+a.wrong,0);
+let ans=c+db+w;
+let acc=ans?Math.round(c/ans*100):0;
 
-  let ans=c+d+w;
-  let per=ans?Math.round(c/ans*100):0;
+return`
 
-  return`
+<div class="card">
 
-  <div class="card">
+<div class="section">
+<h2>📅 ${faDate(d)}</h2>
 
-  <div class="task">
+<button class="danger"
+onclick="deleteDay('${d}')">
+🗑️ حذف آمار روز
+</button>
+</div>
 
-  <div class="icon">${icon(s)}</div>
+<div class="stats">
 
-  <div class="task-info">
-  <b>${esc(s)}</b>
-  <span>${min} دقیقه · ${tests} تست</span>
+<div class="stat">
+<b>${min}</b>
+<span>دقیقه</span>
+</div>
 
-  <div>
-  <span class="badge">✅ ${c}</span>
-  <span class="badge">🤔 ${d}</span>
-  <span class="badge">❌ ${w}</span>
-  </div>
+<div class="stat">
+<b>${tests}</b>
+<span>تست</span>
+</div>
 
-  </div>
+<div class="stat">
+<b>${acc}%</b>
+<span>دقت</span>
+</div>
 
-  <b>${per}%</b>
+</div>
 
-  </div>
+</div>
 
-  </div>
+`;
 
-  `;
-
- }).join("");
+}).join("");
 }
 
 
-/* REPORT */
+/* =========================
+   REPORTS
+========================= */
 
-function renderReport(){
+function getAllDates(){
 
- let todayPlans=plans.filter(p=>p.date===today());
- let todayActs=activities.filter(a=>a.date===today());
+let set=new Set();
 
- let totalMin=todayActs.reduce((s,a)=>s+a.minutes,0);
- let totalTests=todayActs.reduce((s,a)=>s+a.tests,0);
+plans.forEach(p=>set.add(p.date));
+activities.forEach(a=>set.add(a.date));
+Object.keys(sleeps).forEach(d=>set.add(d));
 
- let correct=todayActs.reduce((s,a)=>s+a.correct,0);
- let doubt=todayActs.reduce((s,a)=>s+a.doubt,0);
- let wrong=todayActs.reduce((s,a)=>s+a.wrong,0);
- let blank=todayActs.reduce((s,a)=>s+a.blank,0);
+return [...set].sort().reverse();
+}
 
- let answer=correct+doubt+wrong;
+function makeReport(date){
 
- let accuracy=answer?
- Math.round(correct/answer*100):0;
+let ps=plans.filter(p=>p.date===date);
+let acts=activities.filter(a=>a.date===date);
 
- let done=todayPlans.filter(p=>p.done).length;
+let min=acts.reduce((s,a)=>s+a.minutes,0);
+let tests=acts.reduce((s,a)=>s+a.tests,0);
 
- let text=
+let c=acts.reduce((s,a)=>s+a.correct,0);
+let db=acts.reduce((s,a)=>s+a.doubt,0);
+let w=acts.reduce((s,a)=>s+a.wrong,0);
+let b=acts.reduce((s,a)=>s+a.blank,0);
+
+let ans=c+db+w;
+
+let acc=ans?Math.round(c/ans*100):0;
+
+let done=ps.filter(p=>p.done).length;
+
+let text=
 `🎀 گزارش عملکرد کنکور من
 
+📅 ${faDate(date)}
+
 ⏱️ مطالعه واقعی:
-${totalMin} دقیقه
+${min} دقیقه
 
 📝 تست:
-${totalTests}
+${tests}
 
 نتیجه تست‌ها:
-✅ درست: ${correct}
-🤔 شک‌دار: ${doubt}
-❌ غلط: ${wrong}
-⚪ نزده: ${blank}
+✅ درست: ${c}
+🤔 شک‌دار: ${db}
+❌ غلط: ${w}
+⚪ نزده: ${b}
 
 🎯 دقت:
-${accuracy}%
+${acc}%
 
-📅 برنامه انجام‌شده:
-${done} از ${todayPlans.length}
+📅 اجرای برنامه:
+${done} از ${ps.length}
 
 ━━━━━━━━━━━━━━
 
-📚 مقایسه برنامه با عملکرد واقعی:
+📚 مقایسه برنامه و عملکرد:
 `;
 
- todayPlans.forEach(p=>{
+ps.forEach(p=>{
 
-  let acts=todayActs.filter(a=>a.planId===p.id);
+let aa=acts.filter(a=>a.planId===p.id);
 
-  let realMin=acts.reduce((s,a)=>s+a.minutes,0);
-  let realTests=acts.reduce((s,a)=>s+a.tests,0);
+let rm=aa.reduce((s,a)=>s+a.minutes,0);
+let rt=aa.reduce((s,a)=>s+a.tests,0);
 
-  let realCorrect=acts.reduce((s,a)=>s+a.correct,0);
-  let realDoubt=acts.reduce((s,a)=>s+a.doubt,0);
-  let realWrong=acts.reduce((s,a)=>s+a.wrong,0);
-  let realBlank=acts.reduce((s,a)=>s+a.blank,0);
+let tp=p.minutes?
+Math.round(rm/p.minutes*100):0;
 
-  let timePer=p.minutes?
-  Math.round(realMin/p.minutes*100):0;
+let xp=p.tests?
+Math.round(rt/p.tests*100):0;
 
-  let testPer=p.tests?
-  Math.round(realTests/p.tests*100):0;
-
-  text+=`
+text+=`
 
 ${p.subject} — ${p.topic}
 
 ⏰ برنامه: ${p.minutes} دقیقه
-⏱️ واقعی: ${realMin} دقیقه
-🎯 اجرای زمانی: ${timePer}%
+⏱️ واقعی: ${rm} دقیقه
+🎯 اجرای زمانی: ${tp}%
 
 📝 تست برنامه: ${p.tests}
-✏️ تست واقعی: ${realTests}
-📊 اجرای تست: ${testPer}%
-
-✅ درست: ${realCorrect}
-🤔 شک‌دار: ${realDoubt}
-❌ غلط: ${realWrong}
-⚪ نزده: ${realBlank}
+✏️ تست واقعی: ${rt}
+📊 اجرای تست: ${xp}%
 `;
- });
+});
 
- let s=sleeps[today()];
+if(sleeps[date]){
 
- if(s){
+let s=sleeps[date];
+let sm=sleepMinutes(s.start,s.end);
 
-  let mins=sleepMinutes(s.start,s.end);
-
-  text+=`
+text+=`
 
 ━━━━━━━━━━━━━━
 
 😴 خواب:
-${s.start} → ${s.end}
-${sleepText(mins)}
-${sleepStatus(mins)}
+
+🌙 ${s.start}
+☀️ ${s.end}
+
+🛌 ${sleepText(sm)}
 `;
- }
+}
 
- text+=`
+return text;
+}
 
-━━━━━━━━━━━━━━
+function renderReports(){
 
-💌 گزارش آماده تحلیل توسط مشاور کنکور است.`;
+let box=document.getElementById("reportsList");
 
- document.getElementById("reportText").innerText=text;
+let dates=getAllDates();
+
+if(!dates.length){
+
+box.innerHTML=
+'<div class="card empty">هنوز گزارشی وجود ندارد 🌷</div>';
+
+return;
+}
+
+box.innerHTML=dates.map(d=>`
+
+<div class="card">
+
+<div class="section">
+
+<h2>📅 ${faDate(d)}</h2>
+
+<button class="danger"
+onclick="deleteDay('${d}')">
+🗑️ حذف گزارش
+</button>
+
+</div>
+
+<div class="report">${esc(makeReport(d))}</div>
+
+<button class="secondary"
+onclick="copySpecificReport('${d}')">
+💌 کپی گزارش این روز
+</button>
+
+</div>
+
+`).join("");
 }
 
 
-function copyReport(){
+/* =========================
+   DELETE WHOLE DAY
+========================= */
 
- navigator.clipboard.writeText(
-  document.getElementById("reportText").innerText
- )
- .then(()=>toast("گزارش کپی شد 💌"))
- .catch(()=>toast("کپی نشد"));
-}
+function deleteDay(date){
 
+if(!confirm(
+"⚠️ تمام اطلاعات این روز حذف شود؟\n\n"+
+"برنامه‌ها، عملکردها، آمار و خواب این روز حذف خواهند شد."
+))return;
 
-/* HELPERS */
+plans=plans.filter(p=>p.date!==date);
+activities=activities.filter(a=>a.date!==date);
 
-function icon(s){
+delete sleeps[date];
 
- if(s.includes("زیست"))return"🧬";
- if(s.includes("شیمی"))return"🧪";
- if(s.includes("فیزیک"))return"⚡";
- if(s.includes("ریاضی"))return"📐";
- if(s.includes("زمین"))return"🌍";
- if(s.includes("فارسی"))return"📖";
- if(s.includes("دین"))return"🕌";
- if(s.includes("عربی"))return"📝";
- if(s.includes("زبان"))return"🇬🇧";
-
- return"🌷";
-}
-
-
-function esc(t){
-
- return String(t)
- .replaceAll("&","&amp;")
- .replaceAll("<","&lt;")
- .replaceAll(">","&gt;")
- .replaceAll('"',"&quot;")
- .replaceAll("'","&#039;");
-}
-
-
-function toast(msg){
-
- let t=document.getElementById("toast");
-
- t.innerText=msg;
- t.style.display="block";
-
- setTimeout(()=>{
-  t.style.display="none";
- },1800);
-}
-
-
-/* START */
+saveData();
 
 renderHome();
 renderPlans();
 renderActivities();
 renderSleep();
 renderStats();
-renderReport();
+renderReports();
+
+toast("تمام اطلاعات این روز حذف شد 🗑️");
+}
+
+
+/* =========================
+   COPY
+========================= */
+
+function copySpecificReport(date){
+
+navigator.clipboard.writeText(makeReport(date))
+.then(()=>toast("گزارش کپی شد 💌"))
+.catch(()=>toast("کپی نشد"));
+}
+
+
+/* =========================
+   HELPERS
+========================= */
+
+function subjectIcon(s){
+
+if(s.includes("زیست"))return"🧬";
+if(s.includes("شیمی"))return"🧪";
+if(s.includes("فیزیک"))return"⚡";
+if(s.includes("ریاضی"))return"📐";
+if(s.includes("زمین"))return"🌍";
+if(s.includes("فارسی"))return"📖";
+if(s.includes("دین"))return"🕌";
+if(s.includes("عربی"))return"📝";
+if(s.includes("زبان"))return"🇬🇧";
+
+return"🌷";
+}
+
+function esc(t){
+
+return String(t)
+.replaceAll("&","&amp;")
+.replaceAll("<","&lt;")
+.replaceAll(">","&gt;")
+.replaceAll('"',"&quot;")
+.replaceAll("'","&#039;");
+}
+
+function toast(message){
+
+let t=document.getElementById("toast");
+
+t.innerText=message;
+t.style.display="block";
+
+setTimeout(()=>{
+t.style.display="none";
+},1800);
+}
+
+
+/* =========================
+   START
+========================= */
+
+renderHome();
+renderPlans();
+renderActivities();
+renderSleep();
+renderStats();
+renderReports();
 
 </script>
 
